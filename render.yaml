@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: seo-audit-agent
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: STATELESS
+        value: "true"
+      - key: REQUIRE_AUTH
+        value: "false"
+      - key: DATA_DIR
+        value: /tmp/seoagent
+      - key: LOW_MEMORY
+        value: "true"
+      - key: SCREENSHOTS_ENABLED
+        value: "true"
+      - key: SCREENSHOT_SCALE
+        value: "1"
+      - key: SCREENSHOT_MAX
+        value: "5"
+      - key: PUBLIC_MAX_PAGES
+        value: "5"
+      - key: MAX_PAGES
+        value: "5"
+      - key: CRAWL_CONCURRENCY
+        value: "2"
+      - key: WORKER_COUNT
+        value: "1"
+      - key: RATE_LIMIT_PER_HOUR
+        value: "3"

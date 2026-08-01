@@ -1,0 +1,7 @@
+.venv
+data
+examples
+tests/demo_site/img
+__pycache__
+*.pyc
+.env

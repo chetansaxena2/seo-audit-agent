@@ -1,0 +1,24 @@
+services:
+  seo-agent:
+    build: .
+    image: seo-audit-agent:1.0.0
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    shm_size: 1gb          # Chromium needs shared memory for screenshots
+
+  # Optional: swap SQLite for Postgres once you are past a few thousand audits.
+  # postgres:
+  #   image: postgres:16-alpine
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_PASSWORD: seoagent
+  #     POSTGRES_USER: seoagent
+  #     POSTGRES_DB: seoagent
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+# volumes:
+#   pgdata:

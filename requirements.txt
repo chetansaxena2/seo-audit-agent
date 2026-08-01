@@ -1,0 +1,20 @@
+# core
+httpx==0.28.1
+beautifulsoup4==4.13.4
+lxml==5.3.0
+jinja2==3.1.6
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+sqlalchemy==2.0.36
+pydantic==2.10.6
+python-multipart==0.0.20
+
+# reports
+reportlab==4.2.5
+playwright==1.49.1          # screenshots + chromium PDF (run: playwright install chromium)
+
+# optional: pure-python PDF fallback if you cannot install a browser
+# weasyprint==63.1
+
+# optional: Postgres instead of SQLite for high volume
+# psycopg[binary]==3.2.3

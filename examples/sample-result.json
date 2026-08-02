@@ -1,0 +1,3785 @@
+{
+  "audit_id": "sample",
+  "status": "completed",
+  "generated_at": "2026-08-01T17:48:58+00:00",
+  "duration_sec": 9.1,
+  "site": {
+    "input_url": "http://127.0.0.1:8901/",
+    "url": "http://127.0.0.1:8901",
+    "domain": "127.0.0.1:8901",
+    "brand": "Metro Cab Rental",
+    "location": "Noida",
+    "https": false,
+    "robots_txt": true,
+    "robots_url": "http://127.0.0.1:8901/robots.txt",
+    "sitemap_found": true,
+    "sitemap_locations": [
+      "http://127.0.0.1:8901/sitemap.xml"
+    ],
+    "sitemap_url_count": 8,
+    "llms_txt": false,
+    "cover_screenshot": "http://localhost:8000/files/screenshots/sample/cover.png"
+  },
+  "scores": {
+    "overall_score": 44.8,
+    "grade": "F",
+    "headline": {
+      "authority": 40.1,
+      "ai_score": 33.5,
+      "error_score": 22.0,
+      "page_speed": 100.0,
+      "google_optimized": 50.9
+    },
+    "sections": {
+      "technical": 29.7,
+      "on_page": 32.0,
+      "content": 38.9,
+      "schema": 61.4,
+      "local_seo": 92.8,
+      "conversion": 100.0
+    },
+    "issue_counts": {
+      "total": 82,
+      "critical": 4,
+      "high": 33,
+      "medium": 29,
+      "low": 16,
+      "unique_issue_types": 42
+    },
+    "google_optimized_checklist": [
+      {
+        "check": "Indexable pages",
+        "earned": 8.8,
+        "max": 10,
+        "note": "7/8 pages indexable"
+      },
+      {
+        "check": "HTTPS everywhere",
+        "earned": 0,
+        "max": 6,
+        "note": "HTTPS + redirect from HTTP"
+      },
+      {
+        "check": "Canonical tags",
+        "earned": 2.2,
+        "max": 6,
+        "note": "7/8 pages have a canonical"
+      },
+      {
+        "check": "Title tags (30-60 chars)",
+        "earned": 5.0,
+        "max": 10,
+        "note": "4/8 within range"
+      },
+      {
+        "check": "Meta descriptions (70-160)",
+        "earned": 3.0,
+        "max": 8,
+        "note": "3/8 within range"
+      },
+      {
+        "check": "Single H1 under 60 chars",
+        "earned": 5.0,
+        "max": 8,
+        "note": "5/8 pages compliant"
+      },
+      {
+        "check": "Keyword targeting",
+        "earned": 8.6,
+        "max": 12,
+        "note": "average on-page keyword placement 57/100"
+      },
+      {
+        "check": "Image alt text",
+        "earned": 0.0,
+        "max": 8,
+        "note": "0/4 images have alt text"
+      },
+      {
+        "check": "robots.txt + XML sitemap",
+        "earned": 7,
+        "max": 8,
+        "note": "site files present and linked"
+      },
+      {
+        "check": "Mobile viewport",
+        "earned": 5.2,
+        "max": 6,
+        "note": "7/8 pages"
+      },
+      {
+        "check": "No broken internal links",
+        "earned": 4,
+        "max": 8,
+        "note": "2 broken internal links"
+      },
+      {
+        "check": "Unique titles / content",
+        "earned": 0.0,
+        "max": 6,
+        "note": "7 duplication issues"
+      },
+      {
+        "check": "Structured data",
+        "earned": 2.1,
+        "max": 4,
+        "note": "1/8 pages carry schema"
+      }
+    ],
+    "weighting": {
+      "technical": 0.25,
+      "google_optimized": 0.2,
+      "content": 0.2,
+      "authority": 0.15,
+      "ai_search": 0.1,
+      "speed": 0.1
+    }
+  },
+  "crawl": {
+    "pages_crawled": 8,
+    "pages_requested": 8,
+    "pages": [
+      {
+        "url": "http://127.0.0.1:8901/",
+        "status": 200,
+        "depth": 0,
+        "title": "Metro Cab Rental Service Delhi NCR - Book Outstation Taxi, Airport Transfer and Local Cabs Online 24x7",
+        "title_length": 102,
+        "meta_description": "",
+        "meta_description_length": 0,
+        "h1": [
+          "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day",
+          "Our Fleet"
+        ],
+        "h2": [
+          "Why choose us",
+          "What areas do you cover?"
+        ],
+        "word_count": 160,
+        "images": 2,
+        "images_missing_alt": 2,
+        "images_missing_title": 2,
+        "internal_links": 6,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/",
+        "indexable": true,
+        "schema_types": [
+          "Organization"
+        ],
+        "load_ms": 7,
+        "ttfb_ms": 7,
+        "bytes": 1975,
+        "readability": 47.7
+      },
+      {
+        "url": "http://127.0.0.1:8901/services.html",
+        "status": 200,
+        "depth": 1,
+        "title": "Services",
+        "title_length": 8,
+        "meta_description": "Our services.",
+        "meta_description_length": 13,
+        "h1": [
+          "Services"
+        ],
+        "h2": [],
+        "word_count": 41,
+        "images": 1,
+        "images_missing_alt": 1,
+        "images_missing_title": 1,
+        "internal_links": 1,
+        "external_links": 0,
+        "canonical": "",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 10,
+        "ttfb_ms": 10,
+        "bytes": 600,
+        "readability": 42.3
+      },
+      {
+        "url": "http://127.0.0.1:8901/about.html",
+        "status": 200,
+        "depth": 1,
+        "title": "About Metro Cab Rental | Delhi Taxi Company Since 2014",
+        "title_length": 54,
+        "meta_description": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+        "meta_description_length": 165,
+        "h1": [
+          "About Metro Cab Rental"
+        ],
+        "h2": [],
+        "word_count": 47,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/about.html",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 12,
+        "ttfb_ms": 12,
+        "bytes": 794,
+        "readability": 52.7
+      },
+      {
+        "url": "http://127.0.0.1:8901/contact.html",
+        "status": 200,
+        "depth": 1,
+        "title": "Contact Metro Cab Rental Delhi | Book a Taxi 24x7",
+        "title_length": 49,
+        "meta_description": "Contact Metro Cab Rental in Noida for outstation cabs, airport transfers and local taxi hire across Delhi NCR. Call 011 4000 1234 or send us a booking request.",
+        "meta_description_length": 159,
+        "h1": [
+          "Contact Us"
+        ],
+        "h2": [],
+        "word_count": 17,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/contact.html",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 16,
+        "ttfb_ms": 16,
+        "bytes": 682,
+        "readability": 68.8
+      },
+      {
+        "url": "http://127.0.0.1:8901/packages.html",
+        "status": 200,
+        "depth": 1,
+        "title": "Cab Packages",
+        "title_length": 12,
+        "meta_description": "Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.",
+        "meta_description_length": 149,
+        "h1": [
+          "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You"
+        ],
+        "h2": [],
+        "word_count": 178,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/packages.html",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 14,
+        "ttfb_ms": 14,
+        "bytes": 1462,
+        "readability": 46.9
+      },
+      {
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "status": 200,
+        "depth": 1,
+        "title": "Cab Packages",
+        "title_length": 12,
+        "meta_description": "Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.",
+        "meta_description_length": 149,
+        "h1": [
+          "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You"
+        ],
+        "h2": [],
+        "word_count": 178,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/packages.html",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 5,
+        "ttfb_ms": 5,
+        "bytes": 1462,
+        "readability": 46.9
+      },
+      {
+        "url": "http://127.0.0.1:8901/airport.html",
+        "status": 200,
+        "depth": 1,
+        "title": "Airport Transfer Service in Delhi | Metro Cab Rental",
+        "title_length": 52,
+        "meta_description": "Book a fixed price airport transfer service in Delhi with Metro Cab Rental. Flight tracking, meet and greet, 24x7 pickups from Terminal 1, 2 and 3 with no surge pricing.",
+        "meta_description_length": 169,
+        "h1": [
+          "Airport Transfer Service in Delhi"
+        ],
+        "h2": [],
+        "word_count": 38,
+        "images": 1,
+        "images_missing_alt": 1,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/",
+        "indexable": false,
+        "schema_types": [],
+        "load_ms": 3,
+        "ttfb_ms": 3,
+        "bytes": 742,
+        "readability": 51.7
+      },
+      {
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "status": 200,
+        "depth": 1,
+        "title": "About Metro Cab Rental | Delhi Taxi Company Since 2014",
+        "title_length": 54,
+        "meta_description": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+        "meta_description_length": 165,
+        "h1": [
+          "About Metro Cab Rental"
+        ],
+        "h2": [],
+        "word_count": 47,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "http://127.0.0.1:8901/about.html",
+        "indexable": true,
+        "schema_types": [],
+        "load_ms": 5,
+        "ttfb_ms": 5,
+        "bytes": 794,
+        "readability": 52.7
+      },
+      {
+        "url": "http://127.0.0.1:8901/blog-old.html",
+        "status": 404,
+        "depth": 1,
+        "title": "",
+        "title_length": 0,
+        "meta_description": "",
+        "meta_description_length": 0,
+        "h1": [],
+        "h2": [],
+        "word_count": 0,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "",
+        "indexable": false,
+        "schema_types": [],
+        "load_ms": 5,
+        "ttfb_ms": 5,
+        "bytes": 335,
+        "readability": 0.0
+      },
+      {
+        "url": "http://127.0.0.1:8901/pricing-old.html",
+        "status": 404,
+        "depth": 2,
+        "title": "",
+        "title_length": 0,
+        "meta_description": "",
+        "meta_description_length": 0,
+        "h1": [],
+        "h2": [],
+        "word_count": 0,
+        "images": 0,
+        "images_missing_alt": 0,
+        "images_missing_title": 0,
+        "internal_links": 0,
+        "external_links": 0,
+        "canonical": "",
+        "indexable": false,
+        "schema_types": [],
+        "load_ms": 5,
+        "ttfb_ms": 5,
+        "bytes": 335,
+        "readability": 0.0
+      }
+    ],
+    "sitemap_url_count": 8,
+    "max_depth": 2,
+    "orphan_candidates": 3,
+    "indexable_pages": 7
+  },
+  "keywords": {
+    "brand": "Metro Cab Rental",
+    "location": "Noida",
+    "detected_services": [
+      "Our Fleet",
+      "Outstation Cab Booking",
+      "Cab Packages",
+      "Airport Transfer Service in Delhi"
+    ],
+    "primary_keywords": [
+      "our fleet",
+      "our fleet in noida",
+      "outstation cab booking",
+      "outstation cab booking in noida",
+      "cab packages",
+      "cab packages in noida",
+      "airport transfer service in delhi",
+      "airport transfer service in delhi in noida",
+      "cab rental",
+      "delhi ncr",
+      "metro cab rental",
+      "package includes"
+    ],
+    "secondary_keywords": [
+      "metro cab",
+      "across delhi ncr",
+      "across delhi",
+      "airport transfer",
+      "rental packages",
+      "011 4000 1234",
+      "cab rental metro",
+      "rental metro cab",
+      "cab rental started",
+      "started in 2014",
+      "2014 with three",
+      "cars and now",
+      "runs a fleet",
+      "fleet of eighty",
+      "eighty vehicles across"
+    ],
+    "site_topics": [
+      "cab rental",
+      "delhi ncr",
+      "metro cab rental",
+      "metro cab",
+      "delhi",
+      "package includes",
+      "across delhi ncr",
+      "cab",
+      "rental",
+      "ncr",
+      "across delhi",
+      "airport transfer",
+      "rental packages",
+      "booking",
+      "011 4000 1234",
+      "cab rental metro",
+      "rental metro cab",
+      "cab rental started"
+    ],
+    "source": "derived-from-content",
+    "coverage_score": 57.1,
+    "pages": [
+      {
+        "url": "http://127.0.0.1:8901/",
+        "primary_keyword": "cab rental",
+        "placement": {
+          "title": true,
+          "meta_description": false,
+          "h1": true,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 2.5,
+        "score": 58,
+        "keywords_found": [
+          "our fleet",
+          "our fleet in noida",
+          "cab rental",
+          "delhi ncr",
+          "metro cab rental",
+          "metro cab",
+          "across delhi ncr",
+          "across delhi"
+        ],
+        "keywords_missing": [
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages",
+          "cab packages in noida",
+          "airport transfer service in delhi",
+          "airport transfer service in delhi in noida"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/services.html",
+        "primary_keyword": "outstation cab booking",
+        "placement": {
+          "title": false,
+          "meta_description": false,
+          "h1": false,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 7.32,
+        "score": 20,
+        "keywords_found": [
+          "outstation cab booking",
+          "cab packages",
+          "cab rental",
+          "airport transfer"
+        ],
+        "keywords_missing": [
+          "our fleet",
+          "our fleet in noida",
+          "outstation cab booking in noida",
+          "cab packages in noida",
+          "airport transfer service in delhi",
+          "airport transfer service in delhi in noida"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/about.html",
+        "primary_keyword": "cab rental",
+        "placement": {
+          "title": true,
+          "meta_description": true,
+          "h1": true,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 8.51,
+        "score": 68,
+        "keywords_found": [
+          "our fleet",
+          "cab rental",
+          "delhi ncr",
+          "metro cab rental",
+          "metro cab",
+          "across delhi ncr",
+          "across delhi"
+        ],
+        "keywords_missing": [
+          "our fleet in noida",
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages",
+          "cab packages in noida",
+          "airport transfer service in delhi"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/contact.html",
+        "primary_keyword": "cab rental",
+        "placement": {
+          "title": true,
+          "meta_description": true,
+          "h1": false,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 11.76,
+        "score": 50,
+        "keywords_found": [
+          "cab rental",
+          "delhi ncr",
+          "metro cab rental",
+          "metro cab"
+        ],
+        "keywords_missing": [
+          "our fleet",
+          "our fleet in noida",
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages",
+          "cab packages in noida"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/packages.html",
+        "primary_keyword": "cab packages",
+        "placement": {
+          "title": true,
+          "meta_description": true,
+          "h1": true,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 0.0,
+        "score": 68,
+        "keywords_found": [
+          "cab packages",
+          "cab rental",
+          "delhi ncr",
+          "package includes"
+        ],
+        "keywords_missing": [
+          "our fleet",
+          "our fleet in noida",
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages in noida",
+          "airport transfer service in delhi"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "primary_keyword": "cab packages",
+        "placement": {
+          "title": true,
+          "meta_description": true,
+          "h1": true,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 0.0,
+        "score": 68,
+        "keywords_found": [
+          "cab packages",
+          "cab rental",
+          "delhi ncr",
+          "package includes"
+        ],
+        "keywords_missing": [
+          "our fleet",
+          "our fleet in noida",
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages in noida",
+          "airport transfer service in delhi"
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "primary_keyword": "cab rental",
+        "placement": {
+          "title": true,
+          "meta_description": true,
+          "h1": true,
+          "h2_h3": false,
+          "url_slug": false,
+          "first_100_words": true,
+          "body": true,
+          "image_alt": false,
+          "internal_anchors": false
+        },
+        "density_pct": 8.51,
+        "score": 68,
+        "keywords_found": [
+          "our fleet",
+          "cab rental",
+          "delhi ncr",
+          "metro cab rental",
+          "metro cab",
+          "across delhi ncr",
+          "across delhi"
+        ],
+        "keywords_missing": [
+          "our fleet in noida",
+          "outstation cab booking",
+          "outstation cab booking in noida",
+          "cab packages",
+          "cab packages in noida",
+          "airport transfer service in delhi"
+        ]
+      }
+    ]
+  },
+  "ai_visibility": {
+    "ai_visibility_score": 33.5,
+    "components": {
+      "llms_txt": {
+        "earned": 0,
+        "max": 10,
+        "note": "no /llms.txt found"
+      },
+      "ai_crawler_access": {
+        "earned": 0,
+        "max": 12,
+        "note": "blocked: GPTBot"
+      },
+      "structured_data": {
+        "earned": 8.0,
+        "max": 20,
+        "note": "schema types: organization"
+      },
+      "extractable_answers": {
+        "earned": 9.3,
+        "max": 20,
+        "note": "3 answer blocks, 3 question headings"
+      },
+      "entity_signals": {
+        "earned": 7.0,
+        "max": 18,
+        "note": "about page present, NAP visible"
+      },
+      "freshness": {
+        "earned": 8.0,
+        "max": 8,
+        "note": "2/8 pages show dates"
+      },
+      "content_depth": {
+        "earned": 1.2,
+        "max": 12,
+        "note": "avg 88 words/page, 1 lists+tables"
+      }
+    },
+    "llms_txt_present": false,
+    "ai_crawlers_blocked": [
+      "GPTBot"
+    ],
+    "extractable_answer_blocks": 3,
+    "question_headings": 3,
+    "entity_signals": [
+      "about page present",
+      "NAP visible"
+    ],
+    "brand_citation_check": null
+  },
+  "page_speed": {
+    "page_speed_score": 100.0,
+    "source": "headless-chrome-lab",
+    "mobile_score": 100.0,
+    "desktop_score": null,
+    "metrics": {
+      "lcp": 0.064,
+      "cls": 0,
+      "fcp": 0.056,
+      "ttfb": 0.005,
+      "dcl": 0.022,
+      "load": 0.038
+    },
+    "page_weight_kb": 12.1,
+    "requests": 3,
+    "top_opportunities": [],
+    "tested_url": "http://127.0.0.1:8901/"
+  },
+  "authority": {
+    "authority_score": 40.1,
+    "source": "on-site-estimate",
+    "is_estimate": true,
+    "referring_domains": null,
+    "backlinks": null,
+    "domain_rating": null,
+    "spam_score": null,
+    "top_referring_domains": [],
+    "anchor_text_sample": [],
+    "notes": [
+      "7 indexable pages crawled",
+      "average 95 words per page",
+      "entity schema present",
+      "7 internal links across the crawl",
+      "8 URLs in sitemap",
+      "No backlink API configured \u2014 score derived from on-site authority signals only. Connect DataForSEO, Semrush, Ahrefs or Open PageRank for true link metrics."
+    ]
+  },
+  "content": {
+    "avg_word_count": 95,
+    "min_word_count": 17,
+    "max_word_count": 178,
+    "thin_pages": 7,
+    "duplicate_pairs": [
+      {
+        "a": "http://127.0.0.1:8901/packages.html",
+        "b": "http://127.0.0.1:8901/packages-duplicate.html",
+        "similarity": 100.0
+      }
+    ],
+    "pages_with_faq_headings": 1,
+    "avg_readability": 51.1,
+    "missing_trust_pages": [
+      "privacy",
+      "terms"
+    ]
+  },
+  "schema": {
+    "pages_with_schema": 1,
+    "pages_without_schema": 7,
+    "schema_types_found": [
+      "Organization"
+    ],
+    "has_entity_schema": true,
+    "has_faq_schema": false,
+    "has_breadcrumb_schema": false,
+    "has_page_type_schema": false,
+    "invalid_blocks": 0
+  },
+  "links": {
+    "internal_links_found": 7,
+    "external_links_found": 0,
+    "links_checked": 7,
+    "broken_internal": 2,
+    "broken_external": 0,
+    "broken_urls": [
+      {
+        "url": "http://127.0.0.1:8901/blog-old.html",
+        "status": 404
+      },
+      {
+        "url": "http://127.0.0.1:8901/pricing-old.html",
+        "status": 404
+      }
+    ]
+  },
+  "local_seo": {
+    "local_intent_detected": true,
+    "location": "Noida",
+    "phone_found": true,
+    "address_found": true,
+    "click_to_call": true,
+    "cta_examples": [
+      "Contact",
+      "Send booking request"
+    ],
+    "has_contact_form": true
+  },
+  "competitors": {
+    "enabled": false,
+    "competitors": []
+  },
+  "issues": [
+    {
+      "code": "HTTPS_MISSING",
+      "problem": "Site is not served over HTTPS",
+      "category": "technical",
+      "impact": "critical",
+      "why_it_matters": "HTTPS is a ranking signal and browsers warn users on insecure forms, which kills conversions.",
+      "recommended_fix": "Install a TLS certificate and 301-redirect all HTTP URLs to HTTPS.",
+      "expected_benefit": "Removes browser warnings, protects rankings and conversion rate.",
+      "url": "http://127.0.0.1:8901",
+      "detail": "The site resolves over HTTP; no valid HTTPS response was found.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NOINDEX",
+      "problem": "Page is set to noindex",
+      "category": "technical",
+      "impact": "critical",
+      "why_it_matters": "A noindex tag removes the page from Google entirely, however good the content is.",
+      "recommended_fix": "Remove the noindex directive from the meta robots tag or X-Robots-Tag header.",
+      "expected_benefit": "Page becomes eligible to rank again.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "Page carries a noindex directive.",
+      "evidence": "noindex,follow",
+      "selector": "head",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/noindex_1.png",
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/noindex_1.png"
+    },
+    {
+      "code": "PAGE_4XX",
+      "problem": "Page returns a 4xx error",
+      "category": "technical",
+      "impact": "critical",
+      "why_it_matters": "Users and crawlers hit a dead end; any links pointing there are wasted.",
+      "recommended_fix": "Restore the page or 301-redirect it to the closest relevant live URL.",
+      "expected_benefit": "Recovers lost traffic and link equity.",
+      "url": "http://127.0.0.1:8901/blog-old.html",
+      "detail": "Returned HTTP 404.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "PAGE_4XX",
+      "problem": "Page returns a 4xx error",
+      "category": "technical",
+      "impact": "critical",
+      "why_it_matters": "Users and crawlers hit a dead end; any links pointing there are wasted.",
+      "recommended_fix": "Restore the page or 301-redirect it to the closest relevant live URL.",
+      "expected_benefit": "Recovers lost traffic and link equity.",
+      "url": "http://127.0.0.1:8901/pricing-old.html",
+      "detail": "Returned HTTP 404.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "AI_BOTS_BLOCKED",
+      "problem": "AI crawlers are blocked in robots.txt",
+      "category": "ai_search",
+      "impact": "high",
+      "why_it_matters": "Blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended removes you from AI answers entirely.",
+      "recommended_fix": "Allow the AI user-agents you want citations from (keep blocks only where you intend them).",
+      "expected_benefit": "Eligibility to be cited in AI assistants and AI Overviews.",
+      "url": "http://127.0.0.1:8901/robots.txt",
+      "detail": "robots.txt blocks GPTBot.",
+      "evidence": "User-agent: *\nDisallow: /admin/\n\nUser-agent: GPTBot\nDisallow: /\n",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "BROKEN_INTERNAL_LINK",
+      "problem": "Broken internal links",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "Internal 404s break crawl paths and frustrate users mid-journey.",
+      "recommended_fix": "Update or remove the broken hrefs, or redirect the target URLs.",
+      "expected_benefit": "Better crawl flow, lower bounce, recovered link equity.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "Link to http://127.0.0.1:8901/blog-old.html returns 404.",
+      "evidence": "anchor: 'Old blog' \u2014 linked from 1 place(s)",
+      "selector": "a[href*=\"/blog-old.html\"]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/broken_internal_link_4.png",
+      "extra": {
+        "target": "http://127.0.0.1:8901/blog-old.html",
+        "status": 404,
+        "sources": [
+          "http://127.0.0.1:8901/"
+        ]
+      },
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/broken_internal_link_4.png"
+    },
+    {
+      "code": "BROKEN_INTERNAL_LINK",
+      "problem": "Broken internal links",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "Internal 404s break crawl paths and frustrate users mid-journey.",
+      "recommended_fix": "Update or remove the broken hrefs, or redirect the target URLs.",
+      "expected_benefit": "Better crawl flow, lower bounce, recovered link equity.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Link to http://127.0.0.1:8901/pricing-old.html returns 404.",
+      "evidence": "anchor: 'Old pricing page' \u2014 linked from 1 place(s)",
+      "selector": "a[href*=\"/pricing-old.html\"]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/broken_internal_link_7.png",
+      "extra": {
+        "target": "http://127.0.0.1:8901/pricing-old.html",
+        "status": 404,
+        "sources": [
+          "http://127.0.0.1:8901/services.html"
+        ]
+      },
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/broken_internal_link_7.png"
+    },
+    {
+      "code": "CANONICAL_CONFLICT",
+      "problem": "Canonical points to a different page",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+      "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+      "expected_benefit": "Page regains its own ranking ability.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "Canonical points to http://127.0.0.1:8901/",
+      "evidence": "http://127.0.0.1:8901/",
+      "selector": "head",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/canonical_conflict_2.png",
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/canonical_conflict_2.png"
+    },
+    {
+      "code": "CANONICAL_CONFLICT",
+      "problem": "Canonical points to a different page",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+      "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+      "expected_benefit": "Page regains its own ranking ability.",
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "detail": "Canonical points to http://127.0.0.1:8901/about.html",
+      "evidence": "http://127.0.0.1:8901/about.html",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "CANONICAL_CONFLICT",
+      "problem": "Canonical points to a different page",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+      "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+      "expected_benefit": "Page regains its own ranking ability.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "Canonical points to http://127.0.0.1:8901/packages.html",
+      "evidence": "http://127.0.0.1:8901/packages.html",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "DUPLICATE_CONTENT",
+      "problem": "Near-duplicate content between pages",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Duplicate bodies force Google to pick one page and suppress the others.",
+      "recommended_fix": "Rewrite the overlapping sections so each page has a distinct angle, or consolidate and redirect.",
+      "expected_benefit": "Removes cannibalisation, concentrates authority.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "100% content overlap with http://127.0.0.1:8901/packages-duplicate.html.",
+      "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each pack",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "other_url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "similarity_pct": 100.0
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "IMG_ALT_MISSING",
+      "problem": "Images missing alt text",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+      "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+      "expected_benefit": "Image search traffic plus accessibility compliance.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "2 of 2 images have no alt text.",
+      "evidence": "hero-banner.jpg; IMG_2381.jpg",
+      "selector": "img[src=\"img/hero-banner.jpg\"]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_3.png",
+      "extra": {
+        "images": [
+          "http://127.0.0.1:8901/img/hero-banner.jpg",
+          "http://127.0.0.1:8901/img/IMG_2381.jpg"
+        ]
+      },
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_3.png"
+    },
+    {
+      "code": "IMG_ALT_MISSING",
+      "problem": "Images missing alt text",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+      "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+      "expected_benefit": "Image search traffic plus accessibility compliance.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "1 of 1 images have no alt text.",
+      "evidence": "IMG_2381.jpg",
+      "selector": "img[src=\"img/IMG_2381.jpg\"]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_0.png",
+      "extra": {
+        "images": [
+          "http://127.0.0.1:8901/img/IMG_2381.jpg"
+        ]
+      },
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_0.png"
+    },
+    {
+      "code": "IMG_ALT_MISSING",
+      "problem": "Images missing alt text",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+      "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+      "expected_benefit": "Image search traffic plus accessibility compliance.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "1 of 1 images have no alt text.",
+      "evidence": "hero-banner.jpg",
+      "selector": "img[src=\"img/hero-banner.jpg\"]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_6.png",
+      "extra": {
+        "images": [
+          "http://127.0.0.1:8901/img/hero-banner.jpg"
+        ]
+      },
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_6.png"
+    },
+    {
+      "code": "KEYWORD_MISSING_ONPAGE",
+      "problem": "Target keywords barely used on the page",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+      "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+      "expected_benefit": "Directly improves keyword relevance and rankings.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "'cab packages' appears 0x in body copy; missing from: h2_h3, url_slug, image_alt, internal_anchors.",
+      "evidence": "placement score 68/100",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "KEYWORD_MISSING_ONPAGE",
+      "problem": "Target keywords barely used on the page",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+      "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+      "expected_benefit": "Directly improves keyword relevance and rankings.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "'cab packages' appears 0x in body copy; missing from: h2_h3, url_slug, image_alt, internal_anchors.",
+      "evidence": "placement score 68/100",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "KEYWORD_MISSING_ONPAGE",
+      "problem": "Target keywords barely used on the page",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+      "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+      "expected_benefit": "Directly improves keyword relevance and rankings.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "'outstation cab booking' appears 1x in body copy; missing from: title, meta_description, h1, h2_h3, url_slug, image_alt, internal_anchors.",
+      "evidence": "placement score 20/100",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_MISSING",
+      "problem": "Meta description missing",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Google writes its own snippet, which often ignores your offer and hurts click-through.",
+      "recommended_fix": "Write a 140-160 character description with the keyword and a call to action.",
+      "expected_benefit": "Higher CTR from the same ranking position.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "No meta description tag.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "MISSING_SERVICE_PAGE",
+      "problem": "No dedicated page for a service you offer",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "One page cannot rank for every service; each service needs its own targeted page.",
+      "recommended_fix": "Create a dedicated, keyword-targeted page per service with local modifiers.",
+      "expected_benefit": "Opens a new ranking surface per service.",
+      "url": "http://127.0.0.1:8901",
+      "detail": "No crawled page targets 'Outstation Cab Booking'.",
+      "evidence": "service detected from site content: Outstation Cab Booking",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/contact.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_MISSING",
+      "problem": "No structured data on the page",
+      "category": "schema",
+      "impact": "high",
+      "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+      "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+      "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "No JSON-LD or microdata found on this page.",
+      "evidence": "",
+      "selector": "head",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "Only 160 words of main content.",
+      "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day Metro Cab Rental provides taxi hire across Delhi NCR. We have been driving customers since 2014 with clean cars and profe",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Only 47 words of main content.",
+      "evidence": "About Metro Cab Rental Metro Cab Rental started in 2014 with three cars and now runs a fleet of eighty vehicles across Delhi NCR. Our drivers are police verified and trained in defensive driving. We p",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/contact.html",
+      "detail": "Only 17 words of main content.",
+      "evidence": "Contact Us Metro Cab Rental, Sector 18, Noida, Delhi NCR. Phone: 011 4000 1234 . Send booking request",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "detail": "Only 47 words of main content.",
+      "evidence": "About Metro Cab Rental Metro Cab Rental started in 2014 with three cars and now runs a fleet of eighty vehicles across Delhi NCR. Our drivers are police verified and trained in defensive driving. We p",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "Only 178 words of main content.",
+      "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each package includes a set n",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Only 178 words of main content.",
+      "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each package includes a set n",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "THIN_CONTENT",
+      "problem": "Thin content (under 300 words)",
+      "category": "content",
+      "impact": "high",
+      "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+      "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+      "expected_benefit": "Higher rankings and more long-tail coverage.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Only 41 words of main content.",
+      "evidence": "Services We offer outstation cab booking, airport transfer and local rental packages at competitive rates. Outstation One way and round trip fares to major cities nearby. Airport Fixed price pickups a",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_DUPLICATE",
+      "problem": "Duplicate title tags across pages",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Identical titles make pages look interchangeable and cause keyword cannibalisation.",
+      "recommended_fix": "Write a distinct, page-specific title for each URL.",
+      "expected_benefit": "Removes cannibalisation and clarifies page targeting.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Same title on 2 pages: http://127.0.0.1:8901/about.html, http://127.0.0.1:8901/hidden-orphan.html",
+      "evidence": "about metro cab rental | delhi taxi company since 2014",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/about.html",
+          "http://127.0.0.1:8901/hidden-orphan.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_DUPLICATE",
+      "problem": "Duplicate title tags across pages",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Identical titles make pages look interchangeable and cause keyword cannibalisation.",
+      "recommended_fix": "Write a distinct, page-specific title for each URL.",
+      "expected_benefit": "Removes cannibalisation and clarifies page targeting.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Same title on 2 pages: http://127.0.0.1:8901/packages.html, http://127.0.0.1:8901/packages-duplicate.html",
+      "evidence": "cab packages",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/packages.html",
+          "http://127.0.0.1:8901/packages-duplicate.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_NO_KEYWORD",
+      "problem": "Title does not contain a target keyword",
+      "category": "on_page",
+      "impact": "high",
+      "why_it_matters": "Google reads the title first when matching a page to a query.",
+      "recommended_fix": "Place the page's primary keyword in the first half of the title.",
+      "expected_benefit": "Stronger relevance for the target query.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Target keyword 'outstation cab booking' is not in the title.",
+      "evidence": "Services",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "VIEWPORT_MISSING",
+      "problem": "Mobile viewport meta tag missing",
+      "category": "technical",
+      "impact": "high",
+      "why_it_matters": "Without a viewport tag pages render desktop-width on phones and fail mobile usability.",
+      "recommended_fix": "Add <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+      "expected_benefit": "Mobile usability pass and better mobile rankings.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "No mobile viewport meta tag.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "AI_NO_ANSWER_BLOCKS",
+      "problem": "Content is not written as extractable answers",
+      "category": "ai_search",
+      "impact": "medium",
+      "why_it_matters": "AI systems quote self-contained 40-60 word answers under question headings.",
+      "recommended_fix": "Restructure key sections: question heading, direct answer first, detail after.",
+      "expected_benefit": "Much higher chance of being quoted in AI answers.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "Only 3 extractable answer blocks across 8 pages.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "AI_NO_ENTITY_SIGNALS",
+      "problem": "Weak entity signals (no sameAs / about / author)",
+      "category": "ai_search",
+      "impact": "medium",
+      "why_it_matters": "AI models resolve brands through consistent entity data across the web.",
+      "recommended_fix": "Add sameAs links to your profiles, a detailed About page and named authors with bios.",
+      "expected_benefit": "Stronger brand recognition in AI and Knowledge Graph.",
+      "url": "http://127.0.0.1:8901",
+      "detail": "Weak entity signals: about page present, NAP visible",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "CANONICAL_MISSING",
+      "problem": "Canonical tag missing",
+      "category": "technical",
+      "impact": "medium",
+      "why_it_matters": "Without a canonical, parameter and duplicate URLs can be indexed instead of the page you want.",
+      "recommended_fix": "Add a self-referencing <link rel=\"canonical\"> to every indexable page.",
+      "expected_benefit": "Prevents duplicate-content dilution.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "No rel=canonical link element.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_DUPLICATE",
+      "problem": "Same H1 used on multiple pages",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Duplicate H1s make pages compete with each other for the same query.",
+      "recommended_fix": "Give each page a unique H1 matched to its own keyword.",
+      "expected_benefit": "Removes internal competition.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Identical H1 on 2 pages: http://127.0.0.1:8901/about.html, http://127.0.0.1:8901/hidden-orphan.html",
+      "evidence": "about metro cab rental",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/about.html",
+          "http://127.0.0.1:8901/hidden-orphan.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_DUPLICATE",
+      "problem": "Same H1 used on multiple pages",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Duplicate H1s make pages compete with each other for the same query.",
+      "recommended_fix": "Give each page a unique H1 matched to its own keyword.",
+      "expected_benefit": "Removes internal competition.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Identical H1 on 2 pages: http://127.0.0.1:8901/packages.html, http://127.0.0.1:8901/packages-duplicate.html",
+      "evidence": "local cab rental packages in delhi ncr with fixed hourly and kilometre limits for you",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/packages.html",
+          "http://127.0.0.1:8901/packages-duplicate.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_MULTIPLE",
+      "problem": "Multiple H1 tags on one page",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Several H1s split the page's topical focus and confuse heading hierarchy.",
+      "recommended_fix": "Keep one H1 and demote the rest to H2.",
+      "expected_benefit": "Sharper topical focus per page.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "2 H1 tags found: Reliable Cab Rental in Delhi for Outstation, Airpo | Our Fleet",
+      "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day | Our Fleet",
+      "selector": "xpath=(//h1)[2]",
+      "screenshot": "/home/claude/seo-agent/data/screenshots/sample/h1_multiple_5.png",
+      "screenshot_url": "http://localhost:8000/files/screenshots/sample/h1_multiple_5.png"
+    },
+    {
+      "code": "H1_NO_KEYWORD",
+      "problem": "H1 does not contain a target keyword",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "The H1 is a primary relevance signal for the page's main query.",
+      "recommended_fix": "Rewrite the H1 around the page's primary keyword.",
+      "expected_benefit": "Improved ranking for the target term.",
+      "url": "http://127.0.0.1:8901/contact.html",
+      "detail": "H1 does not contain 'cab rental'.",
+      "evidence": "Contact Us",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_NO_KEYWORD",
+      "problem": "H1 does not contain a target keyword",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "The H1 is a primary relevance signal for the page's main query.",
+      "recommended_fix": "Rewrite the H1 around the page's primary keyword.",
+      "expected_benefit": "Improved ranking for the target term.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "H1 does not contain 'outstation cab booking'.",
+      "evidence": "Services",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "HEADING_NO_KEYWORD",
+      "problem": "Subheadings (H2/H3) never use target keywords",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Subheadings map the page's subtopics; keyword-free headings weaken semantic coverage.",
+      "recommended_fix": "Work primary and secondary keywords into two or three H2/H3 headings.",
+      "expected_benefit": "Better topical depth and featured-snippet eligibility.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "No H2/H3 uses 'cab rental' or its variants.",
+      "evidence": "Why choose us; What areas do you cover?; How do I pay for my ride?",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "HEADING_NO_KEYWORD",
+      "problem": "Subheadings (H2/H3) never use target keywords",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Subheadings map the page's subtopics; keyword-free headings weaken semantic coverage.",
+      "recommended_fix": "Work primary and secondary keywords into two or three H2/H3 headings.",
+      "expected_benefit": "Better topical depth and featured-snippet eligibility.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "No H2/H3 uses 'outstation cab booking' or its variants.",
+      "evidence": "Outstation; Airport",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "LLMS_TXT_MISSING",
+      "problem": "llms.txt is missing",
+      "category": "ai_search",
+      "impact": "medium",
+      "why_it_matters": "llms.txt is the emerging standard for telling AI assistants what your site offers and which pages to read.",
+      "recommended_fix": "Publish /llms.txt with a short business summary, key service URLs and contact details.",
+      "expected_benefit": "Better representation in ChatGPT, Claude and Perplexity answers.",
+      "url": "http://127.0.0.1:8901/llms.txt",
+      "detail": "/llms.txt returned 404.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_DUPLICATE",
+      "problem": "Duplicate meta descriptions",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Repeated descriptions signal templated, low-effort pages.",
+      "recommended_fix": "Write unique descriptions per page.",
+      "expected_benefit": "Improves CTR and perceived page quality.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Same meta description on 2 pages.",
+      "evidence": "metro cab rental has served delhi ncr since 2014 with a fleet of sanitised sedans and suvs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/about.html",
+          "http://127.0.0.1:8901/hidden-orphan.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "META_DUPLICATE",
+      "problem": "Duplicate meta descriptions",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Repeated descriptions signal templated, low-effort pages.",
+      "recommended_fix": "Write unique descriptions per page.",
+      "expected_benefit": "Improves CTR and perceived page quality.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Same meta description on 2 pages.",
+      "evidence": "local cab rental packages of 4 hours, 8 hours and 12 hours in delhi ncr with fixed kilometre limits and transparent extra charges beyond the package.",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/packages.html",
+          "http://127.0.0.1:8901/packages-duplicate.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "META_NO_KEYWORD",
+      "problem": "Meta description has no target keyword",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Keywords in the description are bolded in results, which lifts click-through.",
+      "recommended_fix": "Work the primary keyword naturally into the first sentence.",
+      "expected_benefit": "Better CTR and query relevance.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Target keyword 'outstation cab booking' is not in the meta description.",
+      "evidence": "Our services.",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_TOO_LONG",
+      "problem": "Meta description longer than 160 characters",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+      "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+      "expected_benefit": "Complete, persuasive snippet in search results.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Meta description is 165 characters (limit 160).",
+      "evidence": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_TOO_LONG",
+      "problem": "Meta description longer than 160 characters",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+      "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+      "expected_benefit": "Complete, persuasive snippet in search results.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "Meta description is 169 characters (limit 160).",
+      "evidence": "Book a fixed price airport transfer service in Delhi with Metro Cab Rental. Flight tracking, meet and greet, 24x7 pickups from Terminal 1, 2 and 3 with no surge pricing.",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_TOO_LONG",
+      "problem": "Meta description longer than 160 characters",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+      "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+      "expected_benefit": "Complete, persuasive snippet in search results.",
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "detail": "Meta description is 165 characters (limit 160).",
+      "evidence": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/about.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/contact.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Only 0 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_INTERNAL_LINKS",
+      "problem": "Page has almost no internal links",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+      "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+      "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Only 1 internal links on this page.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_LOCAL_KEYWORDS",
+      "problem": "Location keywords not used on key pages",
+      "category": "local",
+      "impact": "medium",
+      "why_it_matters": "Local intent queries need the city/area in titles, headings and copy.",
+      "recommended_fix": "Add city and service-area terms to titles, H1s and body copy on service pages.",
+      "expected_benefit": "Improved local rankings.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "8 of 8 pages never mention 'Noida' in the title or headings.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/",
+          "http://127.0.0.1:8901/services.html",
+          "http://127.0.0.1:8901/about.html",
+          "http://127.0.0.1:8901/contact.html",
+          "http://127.0.0.1:8901/packages.html",
+          "http://127.0.0.1:8901/packages-duplicate.html",
+          "http://127.0.0.1:8901/airport.html",
+          "http://127.0.0.1:8901/hidden-orphan.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "NO_TRUST_PAGES",
+      "problem": "Missing about / contact / policy pages",
+      "category": "content",
+      "impact": "medium",
+      "why_it_matters": "These pages are core E-E-A-T signals Google uses to judge trustworthiness.",
+      "recommended_fix": "Publish detailed About, Contact, Privacy and Terms pages with real business details.",
+      "expected_benefit": "Stronger E-E-A-T and conversion trust.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "No link found to: privacy, terms.",
+      "evidence": "checked crawled URLs and internal anchors",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "ORPHAN_PAGE",
+      "problem": "Sitemap URLs with no internal links pointing to them",
+      "category": "technical",
+      "impact": "medium",
+      "why_it_matters": "Orphan pages rely on the sitemap alone and rarely accumulate authority.",
+      "recommended_fix": "Add contextual internal links from related pages.",
+      "expected_benefit": "Improved indexation and keyword strength.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "3 sitemap URLs are not linked from any crawled page.",
+      "evidence": "http://127.0.0.1:8901/packages.html; http://127.0.0.1:8901/packages-duplicate.html; http://127.0.0.1:8901/hidden-orphan.html",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "urls": [
+          "http://127.0.0.1:8901/packages.html",
+          "http://127.0.0.1:8901/packages-duplicate.html",
+          "http://127.0.0.1:8901/hidden-orphan.html"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_FAQ_MISSING",
+      "problem": "FAQPage schema not implemented",
+      "category": "schema",
+      "impact": "medium",
+      "why_it_matters": "FAQ schema makes your answers machine-readable for AI answers and SERP features.",
+      "recommended_fix": "Add FAQPage JSON-LD matching visible on-page Q&A content.",
+      "expected_benefit": "AI-answer and rich-result eligibility.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "No FAQPage schema found. 1 page(s) already have Q&A content that could be marked up immediately.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "ready_pages": [
+          "http://127.0.0.1:8901/"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_TOO_LONG",
+      "problem": "Title tag longer than 60 characters",
+      "category": "on_page",
+      "impact": "medium",
+      "why_it_matters": "Google truncates long titles, so the keyword and value proposition can be cut off.",
+      "recommended_fix": "Trim to 50-60 characters, keyword first, brand last.",
+      "expected_benefit": "Higher click-through rate from search.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "Title is 102 characters (limit 60).",
+      "evidence": "Metro Cab Rental Service Delhi NCR - Book Outstation Taxi, Airport Transfer and Local Cabs Online 24x7",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_TOO_LONG",
+      "problem": "H1 longer than 60 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+      "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+      "expected_benefit": "Stronger keyword signal and better scanability.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "H1 is 78 characters (limit 60).",
+      "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_TOO_LONG",
+      "problem": "H1 longer than 60 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+      "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+      "expected_benefit": "Stronger keyword signal and better scanability.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "H1 is 85 characters (limit 60).",
+      "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "H1_TOO_LONG",
+      "problem": "H1 longer than 60 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+      "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+      "expected_benefit": "Stronger keyword signal and better scanability.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "H1 is 85 characters (limit 60).",
+      "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+      "selector": "xpath=(//h1)[1]",
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "HEADING_HIERARCHY",
+      "problem": "Heading levels skip (e.g. H2 to H4)",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Broken hierarchy hurts accessibility and machine parsing of the page structure.",
+      "recommended_fix": "Use sequential heading levels without skipping.",
+      "expected_benefit": "Cleaner structure for crawlers and screen readers.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "Heading jumps from H2 to H4.",
+      "evidence": "H1 > H1 > H2 > H2 > H4",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "HEADING_HIERARCHY",
+      "problem": "Heading levels skip (e.g. H2 to H4)",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Broken hierarchy hurts accessibility and machine parsing of the page structure.",
+      "recommended_fix": "Use sequential heading levels without skipping.",
+      "expected_benefit": "Cleaner structure for crawlers and screen readers.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Heading jumps from H1 to H3.",
+      "evidence": "H1 > H3 > H3",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "IMG_FILENAME_GENERIC",
+      "problem": "Generic image filenames (IMG_1234.jpg)",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Descriptive filenames help image search understand the picture.",
+      "recommended_fix": "Rename files to keyword-descriptive slugs before upload.",
+      "expected_benefit": "Better image search visibility.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "1 images use non-descriptive filenames.",
+      "evidence": "IMG_2381.jpg",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "IMG_FILENAME_GENERIC",
+      "problem": "Generic image filenames (IMG_1234.jpg)",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Descriptive filenames help image search understand the picture.",
+      "recommended_fix": "Rename files to keyword-descriptive slugs before upload.",
+      "expected_benefit": "Better image search visibility.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "1 images use non-descriptive filenames.",
+      "evidence": "IMG_2381.jpg",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "IMG_TITLE_MISSING",
+      "problem": "Images missing title attribute",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Title attributes add hover context and a small extra relevance signal.",
+      "recommended_fix": "Add a short title attribute to key content images.",
+      "expected_benefit": "Marginal relevance and UX gain.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "2 of 2 images have no title attribute.",
+      "evidence": "hero-banner.jpg; IMG_2381.jpg",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "images": [
+          "http://127.0.0.1:8901/img/hero-banner.jpg",
+          "http://127.0.0.1:8901/img/IMG_2381.jpg"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "IMG_TITLE_MISSING",
+      "problem": "Images missing title attribute",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Title attributes add hover context and a small extra relevance signal.",
+      "recommended_fix": "Add a short title attribute to key content images.",
+      "expected_benefit": "Marginal relevance and UX gain.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "1 of 1 images have no title attribute.",
+      "evidence": "hero-banner.jpg",
+      "selector": null,
+      "screenshot": null,
+      "extra": {
+        "images": [
+          "http://127.0.0.1:8901/img/hero-banner.jpg"
+        ]
+      },
+      "screenshot_url": null
+    },
+    {
+      "code": "LANG_MISSING",
+      "problem": "html lang attribute missing",
+      "category": "technical",
+      "impact": "low",
+      "why_it_matters": "Language declaration helps search engines and screen readers serve the right audience.",
+      "recommended_fix": "Add lang=\"en\" (or your locale) to the <html> element.",
+      "expected_benefit": "Cleaner internationalisation and accessibility signals.",
+      "url": "http://127.0.0.1:8901/airport.html",
+      "detail": "<html> has no lang attribute.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "META_TOO_SHORT",
+      "problem": "Meta description under 70 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Very short descriptions leave persuasive space unused.",
+      "recommended_fix": "Expand to 140-160 characters covering benefit, keyword and CTA.",
+      "expected_benefit": "Better snippet quality and CTR.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Meta description is only 13 characters.",
+      "evidence": "Our services.",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "ROBOTS_NO_SITEMAP",
+      "problem": "robots.txt does not reference the sitemap",
+      "category": "technical",
+      "impact": "low",
+      "why_it_matters": "The Sitemap directive is the cheapest way to hand crawlers a complete URL list.",
+      "recommended_fix": "Add a line: Sitemap: https://yourdomain.com/sitemap.xml",
+      "expected_benefit": "Faster discovery and re-crawl of updated pages.",
+      "url": "http://127.0.0.1:8901/robots.txt",
+      "detail": "No Sitemap: directive in robots.txt.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "SCHEMA_BREADCRUMB_MISSING",
+      "problem": "BreadcrumbList schema missing",
+      "category": "schema",
+      "impact": "low",
+      "why_it_matters": "Breadcrumb markup improves how the URL line renders in results.",
+      "recommended_fix": "Add BreadcrumbList JSON-LD reflecting the site hierarchy.",
+      "expected_benefit": "Cleaner SERP presentation.",
+      "url": "http://127.0.0.1:8901/",
+      "detail": "No BreadcrumbList markup detected.",
+      "evidence": "",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_TOO_SHORT",
+      "problem": "Title tag under 30 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Short titles waste prime keyword real estate.",
+      "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+      "expected_benefit": "More keyword coverage and better CTR.",
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "detail": "Title is only 12 characters.",
+      "evidence": "Cab Packages",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_TOO_SHORT",
+      "problem": "Title tag under 30 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Short titles waste prime keyword real estate.",
+      "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+      "expected_benefit": "More keyword coverage and better CTR.",
+      "url": "http://127.0.0.1:8901/packages.html",
+      "detail": "Title is only 12 characters.",
+      "evidence": "Cab Packages",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    },
+    {
+      "code": "TITLE_TOO_SHORT",
+      "problem": "Title tag under 30 characters",
+      "category": "on_page",
+      "impact": "low",
+      "why_it_matters": "Short titles waste prime keyword real estate.",
+      "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+      "expected_benefit": "More keyword coverage and better CTR.",
+      "url": "http://127.0.0.1:8901/services.html",
+      "detail": "Title is only 8 characters.",
+      "evidence": "Services",
+      "selector": null,
+      "screenshot": null,
+      "screenshot_url": null
+    }
+  ],
+  "roadmap": {
+    "critical": [
+      {
+        "code": "HTTPS_MISSING",
+        "problem": "Site is not served over HTTPS",
+        "category": "technical",
+        "impact": "critical",
+        "why_it_matters": "HTTPS is a ranking signal and browsers warn users on insecure forms, which kills conversions.",
+        "recommended_fix": "Install a TLS certificate and 301-redirect all HTTP URLs to HTTPS.",
+        "expected_benefit": "Removes browser warnings, protects rankings and conversion rate.",
+        "url": "http://127.0.0.1:8901",
+        "detail": "The site resolves over HTTP; no valid HTTPS response was found.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NOINDEX",
+        "problem": "Page is set to noindex",
+        "category": "technical",
+        "impact": "critical",
+        "why_it_matters": "A noindex tag removes the page from Google entirely, however good the content is.",
+        "recommended_fix": "Remove the noindex directive from the meta robots tag or X-Robots-Tag header.",
+        "expected_benefit": "Page becomes eligible to rank again.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "Page carries a noindex directive.",
+        "evidence": "noindex,follow",
+        "selector": "head",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/noindex_1.png",
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/noindex_1.png"
+      },
+      {
+        "code": "PAGE_4XX",
+        "problem": "Page returns a 4xx error",
+        "category": "technical",
+        "impact": "critical",
+        "why_it_matters": "Users and crawlers hit a dead end; any links pointing there are wasted.",
+        "recommended_fix": "Restore the page or 301-redirect it to the closest relevant live URL.",
+        "expected_benefit": "Recovers lost traffic and link equity.",
+        "url": "http://127.0.0.1:8901/blog-old.html",
+        "detail": "Returned HTTP 404.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "PAGE_4XX",
+        "problem": "Page returns a 4xx error",
+        "category": "technical",
+        "impact": "critical",
+        "why_it_matters": "Users and crawlers hit a dead end; any links pointing there are wasted.",
+        "recommended_fix": "Restore the page or 301-redirect it to the closest relevant live URL.",
+        "expected_benefit": "Recovers lost traffic and link equity.",
+        "url": "http://127.0.0.1:8901/pricing-old.html",
+        "detail": "Returned HTTP 404.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      }
+    ],
+    "high": [
+      {
+        "code": "AI_BOTS_BLOCKED",
+        "problem": "AI crawlers are blocked in robots.txt",
+        "category": "ai_search",
+        "impact": "high",
+        "why_it_matters": "Blocking GPTBot, ClaudeBot, PerplexityBot or Google-Extended removes you from AI answers entirely.",
+        "recommended_fix": "Allow the AI user-agents you want citations from (keep blocks only where you intend them).",
+        "expected_benefit": "Eligibility to be cited in AI assistants and AI Overviews.",
+        "url": "http://127.0.0.1:8901/robots.txt",
+        "detail": "robots.txt blocks GPTBot.",
+        "evidence": "User-agent: *\nDisallow: /admin/\n\nUser-agent: GPTBot\nDisallow: /\n",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "BROKEN_INTERNAL_LINK",
+        "problem": "Broken internal links",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "Internal 404s break crawl paths and frustrate users mid-journey.",
+        "recommended_fix": "Update or remove the broken hrefs, or redirect the target URLs.",
+        "expected_benefit": "Better crawl flow, lower bounce, recovered link equity.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "Link to http://127.0.0.1:8901/blog-old.html returns 404.",
+        "evidence": "anchor: 'Old blog' \u2014 linked from 1 place(s)",
+        "selector": "a[href*=\"/blog-old.html\"]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/broken_internal_link_4.png",
+        "extra": {
+          "target": "http://127.0.0.1:8901/blog-old.html",
+          "status": 404,
+          "sources": [
+            "http://127.0.0.1:8901/"
+          ]
+        },
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/broken_internal_link_4.png"
+      },
+      {
+        "code": "BROKEN_INTERNAL_LINK",
+        "problem": "Broken internal links",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "Internal 404s break crawl paths and frustrate users mid-journey.",
+        "recommended_fix": "Update or remove the broken hrefs, or redirect the target URLs.",
+        "expected_benefit": "Better crawl flow, lower bounce, recovered link equity.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Link to http://127.0.0.1:8901/pricing-old.html returns 404.",
+        "evidence": "anchor: 'Old pricing page' \u2014 linked from 1 place(s)",
+        "selector": "a[href*=\"/pricing-old.html\"]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/broken_internal_link_7.png",
+        "extra": {
+          "target": "http://127.0.0.1:8901/pricing-old.html",
+          "status": 404,
+          "sources": [
+            "http://127.0.0.1:8901/services.html"
+          ]
+        },
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/broken_internal_link_7.png"
+      },
+      {
+        "code": "CANONICAL_CONFLICT",
+        "problem": "Canonical points to a different page",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+        "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+        "expected_benefit": "Page regains its own ranking ability.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "Canonical points to http://127.0.0.1:8901/",
+        "evidence": "http://127.0.0.1:8901/",
+        "selector": "head",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/canonical_conflict_2.png",
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/canonical_conflict_2.png"
+      },
+      {
+        "code": "CANONICAL_CONFLICT",
+        "problem": "Canonical points to a different page",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+        "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+        "expected_benefit": "Page regains its own ranking ability.",
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "detail": "Canonical points to http://127.0.0.1:8901/about.html",
+        "evidence": "http://127.0.0.1:8901/about.html",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "CANONICAL_CONFLICT",
+        "problem": "Canonical points to a different page",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "A cross-canonical tells Google to ignore this page and rank another one instead.",
+        "recommended_fix": "Point the canonical at the page's own URL unless the duplication is intentional.",
+        "expected_benefit": "Page regains its own ranking ability.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "Canonical points to http://127.0.0.1:8901/packages.html",
+        "evidence": "http://127.0.0.1:8901/packages.html",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "DUPLICATE_CONTENT",
+        "problem": "Near-duplicate content between pages",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Duplicate bodies force Google to pick one page and suppress the others.",
+        "recommended_fix": "Rewrite the overlapping sections so each page has a distinct angle, or consolidate and redirect.",
+        "expected_benefit": "Removes cannibalisation, concentrates authority.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "100% content overlap with http://127.0.0.1:8901/packages-duplicate.html.",
+        "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each pack",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "other_url": "http://127.0.0.1:8901/packages-duplicate.html",
+          "similarity_pct": 100.0
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "IMG_ALT_MISSING",
+        "problem": "Images missing alt text",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+        "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+        "expected_benefit": "Image search traffic plus accessibility compliance.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "2 of 2 images have no alt text.",
+        "evidence": "hero-banner.jpg; IMG_2381.jpg",
+        "selector": "img[src=\"img/hero-banner.jpg\"]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_3.png",
+        "extra": {
+          "images": [
+            "http://127.0.0.1:8901/img/hero-banner.jpg",
+            "http://127.0.0.1:8901/img/IMG_2381.jpg"
+          ]
+        },
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_3.png"
+      },
+      {
+        "code": "IMG_ALT_MISSING",
+        "problem": "Images missing alt text",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+        "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+        "expected_benefit": "Image search traffic plus accessibility compliance.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "1 of 1 images have no alt text.",
+        "evidence": "IMG_2381.jpg",
+        "selector": "img[src=\"img/IMG_2381.jpg\"]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_0.png",
+        "extra": {
+          "images": [
+            "http://127.0.0.1:8901/img/IMG_2381.jpg"
+          ]
+        },
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_0.png"
+      },
+      {
+        "code": "IMG_ALT_MISSING",
+        "problem": "Images missing alt text",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Alt text is required for accessibility and is how images earn image-search traffic.",
+        "recommended_fix": "Add descriptive alt text (5-12 words) to every meaningful image; leave decorative images alt=\"\".",
+        "expected_benefit": "Image search traffic plus accessibility compliance.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "1 of 1 images have no alt text.",
+        "evidence": "hero-banner.jpg",
+        "selector": "img[src=\"img/hero-banner.jpg\"]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/img_alt_missing_6.png",
+        "extra": {
+          "images": [
+            "http://127.0.0.1:8901/img/hero-banner.jpg"
+          ]
+        },
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/img_alt_missing_6.png"
+      },
+      {
+        "code": "KEYWORD_MISSING_ONPAGE",
+        "problem": "Target keywords barely used on the page",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+        "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+        "expected_benefit": "Directly improves keyword relevance and rankings.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "'cab packages' appears 0x in body copy; missing from: h2_h3, url_slug, image_alt, internal_anchors.",
+        "evidence": "placement score 68/100",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "KEYWORD_MISSING_ONPAGE",
+        "problem": "Target keywords barely used on the page",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+        "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+        "expected_benefit": "Directly improves keyword relevance and rankings.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "'cab packages' appears 0x in body copy; missing from: h2_h3, url_slug, image_alt, internal_anchors.",
+        "evidence": "placement score 68/100",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "KEYWORD_MISSING_ONPAGE",
+        "problem": "Target keywords barely used on the page",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "If the service keyword is absent from copy, Google has little to match against the query.",
+        "recommended_fix": "Work the primary and two secondary keywords into the intro, one H2, and the body naturally.",
+        "expected_benefit": "Directly improves keyword relevance and rankings.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "'outstation cab booking' appears 1x in body copy; missing from: title, meta_description, h1, h2_h3, url_slug, image_alt, internal_anchors.",
+        "evidence": "placement score 20/100",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_MISSING",
+        "problem": "Meta description missing",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Google writes its own snippet, which often ignores your offer and hurts click-through.",
+        "recommended_fix": "Write a 140-160 character description with the keyword and a call to action.",
+        "expected_benefit": "Higher CTR from the same ranking position.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "No meta description tag.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "MISSING_SERVICE_PAGE",
+        "problem": "No dedicated page for a service you offer",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "One page cannot rank for every service; each service needs its own targeted page.",
+        "recommended_fix": "Create a dedicated, keyword-targeted page per service with local modifiers.",
+        "expected_benefit": "Opens a new ranking surface per service.",
+        "url": "http://127.0.0.1:8901",
+        "detail": "No crawled page targets 'Outstation Cab Booking'.",
+        "evidence": "service detected from site content: Outstation Cab Booking",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/contact.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_MISSING",
+        "problem": "No structured data on the page",
+        "category": "schema",
+        "impact": "high",
+        "why_it_matters": "Schema is how machines read your entity, services and offers; without it you lose rich results and AI citations.",
+        "recommended_fix": "Add JSON-LD for Organization or LocalBusiness plus page-type schema (Service, Article, Product).",
+        "expected_benefit": "Rich results eligibility and better AI/entity understanding.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "No JSON-LD or microdata found on this page.",
+        "evidence": "",
+        "selector": "head",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "Only 160 words of main content.",
+        "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day Metro Cab Rental provides taxi hire across Delhi NCR. We have been driving customers since 2014 with clean cars and profe",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Only 47 words of main content.",
+        "evidence": "About Metro Cab Rental Metro Cab Rental started in 2014 with three cars and now runs a fleet of eighty vehicles across Delhi NCR. Our drivers are police verified and trained in defensive driving. We p",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/contact.html",
+        "detail": "Only 17 words of main content.",
+        "evidence": "Contact Us Metro Cab Rental, Sector 18, Noida, Delhi NCR. Phone: 011 4000 1234 . Send booking request",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "detail": "Only 47 words of main content.",
+        "evidence": "About Metro Cab Rental Metro Cab Rental started in 2014 with three cars and now runs a fleet of eighty vehicles across Delhi NCR. Our drivers are police verified and trained in defensive driving. We p",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "Only 178 words of main content.",
+        "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each package includes a set n",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Only 178 words of main content.",
+        "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You Choose a four hour, eight hour or twelve hour package for local travel in Delhi NCR. Each package includes a set n",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "THIN_CONTENT",
+        "problem": "Thin content (under 300 words)",
+        "category": "content",
+        "impact": "high",
+        "why_it_matters": "Thin pages rarely satisfy search intent and struggle to rank for competitive terms.",
+        "recommended_fix": "Expand to 700+ words covering the questions searchers actually ask, with proof and examples.",
+        "expected_benefit": "Higher rankings and more long-tail coverage.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Only 41 words of main content.",
+        "evidence": "Services We offer outstation cab booking, airport transfer and local rental packages at competitive rates. Outstation One way and round trip fares to major cities nearby. Airport Fixed price pickups a",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_DUPLICATE",
+        "problem": "Duplicate title tags across pages",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Identical titles make pages look interchangeable and cause keyword cannibalisation.",
+        "recommended_fix": "Write a distinct, page-specific title for each URL.",
+        "expected_benefit": "Removes cannibalisation and clarifies page targeting.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Same title on 2 pages: http://127.0.0.1:8901/about.html, http://127.0.0.1:8901/hidden-orphan.html",
+        "evidence": "about metro cab rental | delhi taxi company since 2014",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/about.html",
+            "http://127.0.0.1:8901/hidden-orphan.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_DUPLICATE",
+        "problem": "Duplicate title tags across pages",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Identical titles make pages look interchangeable and cause keyword cannibalisation.",
+        "recommended_fix": "Write a distinct, page-specific title for each URL.",
+        "expected_benefit": "Removes cannibalisation and clarifies page targeting.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Same title on 2 pages: http://127.0.0.1:8901/packages.html, http://127.0.0.1:8901/packages-duplicate.html",
+        "evidence": "cab packages",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/packages.html",
+            "http://127.0.0.1:8901/packages-duplicate.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_NO_KEYWORD",
+        "problem": "Title does not contain a target keyword",
+        "category": "on_page",
+        "impact": "high",
+        "why_it_matters": "Google reads the title first when matching a page to a query.",
+        "recommended_fix": "Place the page's primary keyword in the first half of the title.",
+        "expected_benefit": "Stronger relevance for the target query.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Target keyword 'outstation cab booking' is not in the title.",
+        "evidence": "Services",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "VIEWPORT_MISSING",
+        "problem": "Mobile viewport meta tag missing",
+        "category": "technical",
+        "impact": "high",
+        "why_it_matters": "Without a viewport tag pages render desktop-width on phones and fail mobile usability.",
+        "recommended_fix": "Add <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+        "expected_benefit": "Mobile usability pass and better mobile rankings.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "No mobile viewport meta tag.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      }
+    ],
+    "medium": [
+      {
+        "code": "AI_NO_ANSWER_BLOCKS",
+        "problem": "Content is not written as extractable answers",
+        "category": "ai_search",
+        "impact": "medium",
+        "why_it_matters": "AI systems quote self-contained 40-60 word answers under question headings.",
+        "recommended_fix": "Restructure key sections: question heading, direct answer first, detail after.",
+        "expected_benefit": "Much higher chance of being quoted in AI answers.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "Only 3 extractable answer blocks across 8 pages.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "AI_NO_ENTITY_SIGNALS",
+        "problem": "Weak entity signals (no sameAs / about / author)",
+        "category": "ai_search",
+        "impact": "medium",
+        "why_it_matters": "AI models resolve brands through consistent entity data across the web.",
+        "recommended_fix": "Add sameAs links to your profiles, a detailed About page and named authors with bios.",
+        "expected_benefit": "Stronger brand recognition in AI and Knowledge Graph.",
+        "url": "http://127.0.0.1:8901",
+        "detail": "Weak entity signals: about page present, NAP visible",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "CANONICAL_MISSING",
+        "problem": "Canonical tag missing",
+        "category": "technical",
+        "impact": "medium",
+        "why_it_matters": "Without a canonical, parameter and duplicate URLs can be indexed instead of the page you want.",
+        "recommended_fix": "Add a self-referencing <link rel=\"canonical\"> to every indexable page.",
+        "expected_benefit": "Prevents duplicate-content dilution.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "No rel=canonical link element.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_DUPLICATE",
+        "problem": "Same H1 used on multiple pages",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Duplicate H1s make pages compete with each other for the same query.",
+        "recommended_fix": "Give each page a unique H1 matched to its own keyword.",
+        "expected_benefit": "Removes internal competition.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Identical H1 on 2 pages: http://127.0.0.1:8901/about.html, http://127.0.0.1:8901/hidden-orphan.html",
+        "evidence": "about metro cab rental",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/about.html",
+            "http://127.0.0.1:8901/hidden-orphan.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_DUPLICATE",
+        "problem": "Same H1 used on multiple pages",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Duplicate H1s make pages compete with each other for the same query.",
+        "recommended_fix": "Give each page a unique H1 matched to its own keyword.",
+        "expected_benefit": "Removes internal competition.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Identical H1 on 2 pages: http://127.0.0.1:8901/packages.html, http://127.0.0.1:8901/packages-duplicate.html",
+        "evidence": "local cab rental packages in delhi ncr with fixed hourly and kilometre limits for you",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/packages.html",
+            "http://127.0.0.1:8901/packages-duplicate.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_MULTIPLE",
+        "problem": "Multiple H1 tags on one page",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Several H1s split the page's topical focus and confuse heading hierarchy.",
+        "recommended_fix": "Keep one H1 and demote the rest to H2.",
+        "expected_benefit": "Sharper topical focus per page.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "2 H1 tags found: Reliable Cab Rental in Delhi for Outstation, Airpo | Our Fleet",
+        "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day | Our Fleet",
+        "selector": "xpath=(//h1)[2]",
+        "screenshot": "/home/claude/seo-agent/data/screenshots/sample/h1_multiple_5.png",
+        "screenshot_url": "http://localhost:8000/files/screenshots/sample/h1_multiple_5.png"
+      },
+      {
+        "code": "H1_NO_KEYWORD",
+        "problem": "H1 does not contain a target keyword",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "The H1 is a primary relevance signal for the page's main query.",
+        "recommended_fix": "Rewrite the H1 around the page's primary keyword.",
+        "expected_benefit": "Improved ranking for the target term.",
+        "url": "http://127.0.0.1:8901/contact.html",
+        "detail": "H1 does not contain 'cab rental'.",
+        "evidence": "Contact Us",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_NO_KEYWORD",
+        "problem": "H1 does not contain a target keyword",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "The H1 is a primary relevance signal for the page's main query.",
+        "recommended_fix": "Rewrite the H1 around the page's primary keyword.",
+        "expected_benefit": "Improved ranking for the target term.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "H1 does not contain 'outstation cab booking'.",
+        "evidence": "Services",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "HEADING_NO_KEYWORD",
+        "problem": "Subheadings (H2/H3) never use target keywords",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Subheadings map the page's subtopics; keyword-free headings weaken semantic coverage.",
+        "recommended_fix": "Work primary and secondary keywords into two or three H2/H3 headings.",
+        "expected_benefit": "Better topical depth and featured-snippet eligibility.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "No H2/H3 uses 'cab rental' or its variants.",
+        "evidence": "Why choose us; What areas do you cover?; How do I pay for my ride?",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "HEADING_NO_KEYWORD",
+        "problem": "Subheadings (H2/H3) never use target keywords",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Subheadings map the page's subtopics; keyword-free headings weaken semantic coverage.",
+        "recommended_fix": "Work primary and secondary keywords into two or three H2/H3 headings.",
+        "expected_benefit": "Better topical depth and featured-snippet eligibility.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "No H2/H3 uses 'outstation cab booking' or its variants.",
+        "evidence": "Outstation; Airport",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "LLMS_TXT_MISSING",
+        "problem": "llms.txt is missing",
+        "category": "ai_search",
+        "impact": "medium",
+        "why_it_matters": "llms.txt is the emerging standard for telling AI assistants what your site offers and which pages to read.",
+        "recommended_fix": "Publish /llms.txt with a short business summary, key service URLs and contact details.",
+        "expected_benefit": "Better representation in ChatGPT, Claude and Perplexity answers.",
+        "url": "http://127.0.0.1:8901/llms.txt",
+        "detail": "/llms.txt returned 404.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_DUPLICATE",
+        "problem": "Duplicate meta descriptions",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Repeated descriptions signal templated, low-effort pages.",
+        "recommended_fix": "Write unique descriptions per page.",
+        "expected_benefit": "Improves CTR and perceived page quality.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Same meta description on 2 pages.",
+        "evidence": "metro cab rental has served delhi ncr since 2014 with a fleet of sanitised sedans and suvs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/about.html",
+            "http://127.0.0.1:8901/hidden-orphan.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "META_DUPLICATE",
+        "problem": "Duplicate meta descriptions",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Repeated descriptions signal templated, low-effort pages.",
+        "recommended_fix": "Write unique descriptions per page.",
+        "expected_benefit": "Improves CTR and perceived page quality.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Same meta description on 2 pages.",
+        "evidence": "local cab rental packages of 4 hours, 8 hours and 12 hours in delhi ncr with fixed kilometre limits and transparent extra charges beyond the package.",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/packages.html",
+            "http://127.0.0.1:8901/packages-duplicate.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "META_NO_KEYWORD",
+        "problem": "Meta description has no target keyword",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Keywords in the description are bolded in results, which lifts click-through.",
+        "recommended_fix": "Work the primary keyword naturally into the first sentence.",
+        "expected_benefit": "Better CTR and query relevance.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Target keyword 'outstation cab booking' is not in the meta description.",
+        "evidence": "Our services.",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_TOO_LONG",
+        "problem": "Meta description longer than 160 characters",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+        "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+        "expected_benefit": "Complete, persuasive snippet in search results.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Meta description is 165 characters (limit 160).",
+        "evidence": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_TOO_LONG",
+        "problem": "Meta description longer than 160 characters",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+        "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+        "expected_benefit": "Complete, persuasive snippet in search results.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "Meta description is 169 characters (limit 160).",
+        "evidence": "Book a fixed price airport transfer service in Delhi with Metro Cab Rental. Flight tracking, meet and greet, 24x7 pickups from Terminal 1, 2 and 3 with no surge pricing.",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_TOO_LONG",
+        "problem": "Meta description longer than 160 characters",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Anything past ~160 characters is cut off, so the call to action disappears.",
+        "recommended_fix": "Rewrite to 140-160 characters with the keyword early.",
+        "expected_benefit": "Complete, persuasive snippet in search results.",
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "detail": "Meta description is 165 characters (limit 160).",
+        "evidence": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/about.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/contact.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/hidden-orphan.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Only 0 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_INTERNAL_LINKS",
+        "problem": "Page has almost no internal links",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "Internal links pass authority and tell Google which pages matter.",
+        "recommended_fix": "Add 3-5 contextual links to related service or money pages.",
+        "expected_benefit": "Better crawl depth and stronger money-page rankings.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Only 1 internal links on this page.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_LOCAL_KEYWORDS",
+        "problem": "Location keywords not used on key pages",
+        "category": "local",
+        "impact": "medium",
+        "why_it_matters": "Local intent queries need the city/area in titles, headings and copy.",
+        "recommended_fix": "Add city and service-area terms to titles, H1s and body copy on service pages.",
+        "expected_benefit": "Improved local rankings.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "8 of 8 pages never mention 'Noida' in the title or headings.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/",
+            "http://127.0.0.1:8901/services.html",
+            "http://127.0.0.1:8901/about.html",
+            "http://127.0.0.1:8901/contact.html",
+            "http://127.0.0.1:8901/packages.html",
+            "http://127.0.0.1:8901/packages-duplicate.html",
+            "http://127.0.0.1:8901/airport.html",
+            "http://127.0.0.1:8901/hidden-orphan.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "NO_TRUST_PAGES",
+        "problem": "Missing about / contact / policy pages",
+        "category": "content",
+        "impact": "medium",
+        "why_it_matters": "These pages are core E-E-A-T signals Google uses to judge trustworthiness.",
+        "recommended_fix": "Publish detailed About, Contact, Privacy and Terms pages with real business details.",
+        "expected_benefit": "Stronger E-E-A-T and conversion trust.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "No link found to: privacy, terms.",
+        "evidence": "checked crawled URLs and internal anchors",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "ORPHAN_PAGE",
+        "problem": "Sitemap URLs with no internal links pointing to them",
+        "category": "technical",
+        "impact": "medium",
+        "why_it_matters": "Orphan pages rely on the sitemap alone and rarely accumulate authority.",
+        "recommended_fix": "Add contextual internal links from related pages.",
+        "expected_benefit": "Improved indexation and keyword strength.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "3 sitemap URLs are not linked from any crawled page.",
+        "evidence": "http://127.0.0.1:8901/packages.html; http://127.0.0.1:8901/packages-duplicate.html; http://127.0.0.1:8901/hidden-orphan.html",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "urls": [
+            "http://127.0.0.1:8901/packages.html",
+            "http://127.0.0.1:8901/packages-duplicate.html",
+            "http://127.0.0.1:8901/hidden-orphan.html"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_FAQ_MISSING",
+        "problem": "FAQPage schema not implemented",
+        "category": "schema",
+        "impact": "medium",
+        "why_it_matters": "FAQ schema makes your answers machine-readable for AI answers and SERP features.",
+        "recommended_fix": "Add FAQPage JSON-LD matching visible on-page Q&A content.",
+        "expected_benefit": "AI-answer and rich-result eligibility.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "No FAQPage schema found. 1 page(s) already have Q&A content that could be marked up immediately.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "ready_pages": [
+            "http://127.0.0.1:8901/"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_TOO_LONG",
+        "problem": "Title tag longer than 60 characters",
+        "category": "on_page",
+        "impact": "medium",
+        "why_it_matters": "Google truncates long titles, so the keyword and value proposition can be cut off.",
+        "recommended_fix": "Trim to 50-60 characters, keyword first, brand last.",
+        "expected_benefit": "Higher click-through rate from search.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "Title is 102 characters (limit 60).",
+        "evidence": "Metro Cab Rental Service Delhi NCR - Book Outstation Taxi, Airport Transfer and Local Cabs Online 24x7",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      }
+    ],
+    "low": [
+      {
+        "code": "H1_TOO_LONG",
+        "problem": "H1 longer than 60 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+        "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+        "expected_benefit": "Stronger keyword signal and better scanability.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "H1 is 78 characters (limit 60).",
+        "evidence": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_TOO_LONG",
+        "problem": "H1 longer than 60 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+        "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+        "expected_benefit": "Stronger keyword signal and better scanability.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "H1 is 85 characters (limit 60).",
+        "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "H1_TOO_LONG",
+        "problem": "H1 longer than 60 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Long headings dilute the keyword and read poorly on mobile.",
+        "recommended_fix": "Tighten the H1 to under 60 characters, keyword first.",
+        "expected_benefit": "Stronger keyword signal and better scanability.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "H1 is 85 characters (limit 60).",
+        "evidence": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+        "selector": "xpath=(//h1)[1]",
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "HEADING_HIERARCHY",
+        "problem": "Heading levels skip (e.g. H2 to H4)",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Broken hierarchy hurts accessibility and machine parsing of the page structure.",
+        "recommended_fix": "Use sequential heading levels without skipping.",
+        "expected_benefit": "Cleaner structure for crawlers and screen readers.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "Heading jumps from H2 to H4.",
+        "evidence": "H1 > H1 > H2 > H2 > H4",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "HEADING_HIERARCHY",
+        "problem": "Heading levels skip (e.g. H2 to H4)",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Broken hierarchy hurts accessibility and machine parsing of the page structure.",
+        "recommended_fix": "Use sequential heading levels without skipping.",
+        "expected_benefit": "Cleaner structure for crawlers and screen readers.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Heading jumps from H1 to H3.",
+        "evidence": "H1 > H3 > H3",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "IMG_FILENAME_GENERIC",
+        "problem": "Generic image filenames (IMG_1234.jpg)",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Descriptive filenames help image search understand the picture.",
+        "recommended_fix": "Rename files to keyword-descriptive slugs before upload.",
+        "expected_benefit": "Better image search visibility.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "1 images use non-descriptive filenames.",
+        "evidence": "IMG_2381.jpg",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "IMG_FILENAME_GENERIC",
+        "problem": "Generic image filenames (IMG_1234.jpg)",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Descriptive filenames help image search understand the picture.",
+        "recommended_fix": "Rename files to keyword-descriptive slugs before upload.",
+        "expected_benefit": "Better image search visibility.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "1 images use non-descriptive filenames.",
+        "evidence": "IMG_2381.jpg",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "IMG_TITLE_MISSING",
+        "problem": "Images missing title attribute",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Title attributes add hover context and a small extra relevance signal.",
+        "recommended_fix": "Add a short title attribute to key content images.",
+        "expected_benefit": "Marginal relevance and UX gain.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "2 of 2 images have no title attribute.",
+        "evidence": "hero-banner.jpg; IMG_2381.jpg",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "images": [
+            "http://127.0.0.1:8901/img/hero-banner.jpg",
+            "http://127.0.0.1:8901/img/IMG_2381.jpg"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "IMG_TITLE_MISSING",
+        "problem": "Images missing title attribute",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Title attributes add hover context and a small extra relevance signal.",
+        "recommended_fix": "Add a short title attribute to key content images.",
+        "expected_benefit": "Marginal relevance and UX gain.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "1 of 1 images have no title attribute.",
+        "evidence": "hero-banner.jpg",
+        "selector": null,
+        "screenshot": null,
+        "extra": {
+          "images": [
+            "http://127.0.0.1:8901/img/hero-banner.jpg"
+          ]
+        },
+        "screenshot_url": null
+      },
+      {
+        "code": "LANG_MISSING",
+        "problem": "html lang attribute missing",
+        "category": "technical",
+        "impact": "low",
+        "why_it_matters": "Language declaration helps search engines and screen readers serve the right audience.",
+        "recommended_fix": "Add lang=\"en\" (or your locale) to the <html> element.",
+        "expected_benefit": "Cleaner internationalisation and accessibility signals.",
+        "url": "http://127.0.0.1:8901/airport.html",
+        "detail": "<html> has no lang attribute.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "META_TOO_SHORT",
+        "problem": "Meta description under 70 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Very short descriptions leave persuasive space unused.",
+        "recommended_fix": "Expand to 140-160 characters covering benefit, keyword and CTA.",
+        "expected_benefit": "Better snippet quality and CTR.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Meta description is only 13 characters.",
+        "evidence": "Our services.",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "ROBOTS_NO_SITEMAP",
+        "problem": "robots.txt does not reference the sitemap",
+        "category": "technical",
+        "impact": "low",
+        "why_it_matters": "The Sitemap directive is the cheapest way to hand crawlers a complete URL list.",
+        "recommended_fix": "Add a line: Sitemap: https://yourdomain.com/sitemap.xml",
+        "expected_benefit": "Faster discovery and re-crawl of updated pages.",
+        "url": "http://127.0.0.1:8901/robots.txt",
+        "detail": "No Sitemap: directive in robots.txt.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "SCHEMA_BREADCRUMB_MISSING",
+        "problem": "BreadcrumbList schema missing",
+        "category": "schema",
+        "impact": "low",
+        "why_it_matters": "Breadcrumb markup improves how the URL line renders in results.",
+        "recommended_fix": "Add BreadcrumbList JSON-LD reflecting the site hierarchy.",
+        "expected_benefit": "Cleaner SERP presentation.",
+        "url": "http://127.0.0.1:8901/",
+        "detail": "No BreadcrumbList markup detected.",
+        "evidence": "",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_TOO_SHORT",
+        "problem": "Title tag under 30 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Short titles waste prime keyword real estate.",
+        "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+        "expected_benefit": "More keyword coverage and better CTR.",
+        "url": "http://127.0.0.1:8901/packages-duplicate.html",
+        "detail": "Title is only 12 characters.",
+        "evidence": "Cab Packages",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_TOO_SHORT",
+        "problem": "Title tag under 30 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Short titles waste prime keyword real estate.",
+        "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+        "expected_benefit": "More keyword coverage and better CTR.",
+        "url": "http://127.0.0.1:8901/packages.html",
+        "detail": "Title is only 12 characters.",
+        "evidence": "Cab Packages",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      },
+      {
+        "code": "TITLE_TOO_SHORT",
+        "problem": "Title tag under 30 characters",
+        "category": "on_page",
+        "impact": "low",
+        "why_it_matters": "Short titles waste prime keyword real estate.",
+        "recommended_fix": "Expand to 50-60 characters with the primary keyword plus a qualifier or location.",
+        "expected_benefit": "More keyword coverage and better CTR.",
+        "url": "http://127.0.0.1:8901/services.html",
+        "detail": "Title is only 8 characters.",
+        "evidence": "Services",
+        "selector": null,
+        "screenshot": null,
+        "screenshot_url": null
+      }
+    ]
+  },
+  "recommended_fixes": [
+    {
+      "url": "http://127.0.0.1:8901/",
+      "primary_keyword": "cab rental",
+      "current_title": "Metro Cab Rental Service Delhi NCR - Book Outstation Taxi, Airport Transfer and Local Cabs Online 24x7",
+      "suggested_title": "Cab rental in Noida | Metro Cab Rental",
+      "current_meta_description": "",
+      "suggested_meta_description": "Looking for cab rental in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day",
+      "suggested_h1": "Cab Rental in Noida",
+      "issues_addressed": [
+        "H1_MULTIPLE",
+        "H1_TOO_LONG",
+        "META_MISSING",
+        "TITLE_TOO_LONG"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/services.html",
+      "primary_keyword": "outstation cab booking",
+      "current_title": "Services",
+      "suggested_title": "Outstation cab booking in Noida | Metro Cab Rental",
+      "current_meta_description": "Our services.",
+      "suggested_meta_description": "Looking for outstation cab booking in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "Services",
+      "suggested_h1": "Outstation Cab Booking in Noida",
+      "issues_addressed": [
+        "H1_NO_KEYWORD",
+        "META_NO_KEYWORD",
+        "META_TOO_SHORT",
+        "TITLE_NO_KEYWORD",
+        "TITLE_TOO_SHORT"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/about.html",
+      "primary_keyword": "cab rental",
+      "current_title": "About Metro Cab Rental | Delhi Taxi Company Since 2014",
+      "suggested_title": "Cab rental in Noida | Metro Cab Rental",
+      "current_meta_description": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+      "suggested_meta_description": "Looking for cab rental in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "About Metro Cab Rental",
+      "suggested_h1": "Cab Rental in Noida",
+      "issues_addressed": [
+        "H1_DUPLICATE",
+        "META_DUPLICATE",
+        "META_TOO_LONG",
+        "TITLE_DUPLICATE"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/contact.html",
+      "primary_keyword": "cab rental",
+      "current_title": "Contact Metro Cab Rental Delhi | Book a Taxi 24x7",
+      "suggested_title": "Cab rental in Noida | Metro Cab Rental",
+      "current_meta_description": "Contact Metro Cab Rental in Noida for outstation cabs, airport transfers and local taxi hire across Delhi NCR. Call 011 4000 1234 or send us a booking request.",
+      "suggested_meta_description": "Looking for cab rental in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "Contact Us",
+      "suggested_h1": "Cab Rental in Noida",
+      "issues_addressed": [
+        "H1_NO_KEYWORD"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/packages.html",
+      "primary_keyword": "cab packages",
+      "current_title": "Cab Packages",
+      "suggested_title": "Cab packages in Noida | Metro Cab Rental",
+      "current_meta_description": "Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.",
+      "suggested_meta_description": "Looking for cab packages in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+      "suggested_h1": "Cab Packages in Noida",
+      "issues_addressed": [
+        "H1_DUPLICATE",
+        "H1_TOO_LONG",
+        "META_DUPLICATE",
+        "TITLE_DUPLICATE",
+        "TITLE_TOO_SHORT"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/packages-duplicate.html",
+      "primary_keyword": "cab packages",
+      "current_title": "Cab Packages",
+      "suggested_title": "Cab packages in Noida | Metro Cab Rental",
+      "current_meta_description": "Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.",
+      "suggested_meta_description": "Looking for cab packages in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "Local Cab Rental Packages in Delhi NCR With Fixed Hourly and Kilometre Limits For You",
+      "suggested_h1": "Cab Packages in Noida",
+      "issues_addressed": [
+        "H1_TOO_LONG",
+        "TITLE_TOO_SHORT"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/airport.html",
+      "primary_keyword": "",
+      "current_title": "Airport Transfer Service in Delhi | Metro Cab Rental",
+      "suggested_title": "Airport Transfer Service in Delhi | Me\u2026 | Metro Cab Rental",
+      "current_meta_description": "Book a fixed price airport transfer service in Delhi with Metro Cab Rental. Flight tracking, meet and greet, 24x7 pickups from Terminal 1, 2 and 3 with no surge pricing.",
+      "suggested_meta_description": "Looking for airport transfer service in delhi in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote\u2026",
+      "current_h1": "Airport Transfer Service in Delhi",
+      "suggested_h1": "Airport Transfer Service in Delhi",
+      "issues_addressed": [
+        "META_TOO_LONG"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8901/hidden-orphan.html",
+      "primary_keyword": "cab rental",
+      "current_title": "About Metro Cab Rental | Delhi Taxi Company Since 2014",
+      "suggested_title": "Cab rental in Noida | Metro Cab Rental",
+      "current_meta_description": "Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.",
+      "suggested_meta_description": "Looking for cab rental in Noida? Metro Cab Rental offers reliable, transparent service with fast response times. Get a free quote today.",
+      "current_h1": "About Metro Cab Rental",
+      "suggested_h1": "Cab Rental in Noida",
+      "issues_addressed": [
+        "META_TOO_LONG"
+      ]
+    }
+  ],
+  "generated_assets": {
+    "llms_txt": "# Metro Cab Rental\n\n> Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day Metro Cab Rental provides taxi hire across Delhi NCR. We have been driving customers since 2014 with clean cars and professional chauffeurs.\n\nLocation / service area: Noida\n\n## Services\n\n- Our Fleet\n- Outstation Cab Booking\n- Cab Packages\n- Airport Transfer Service in Delhi\n\n## Key pages\n\n- [Metro Cab Rental Service Delhi NCR - Book Outstation Taxi, Airport Transfer and Local Cabs Online 24x7](http://127.0.0.1:8901/): Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day Metro Cab Rental provides taxi\n- [Services](http://127.0.0.1:8901/services.html): Our services.\n- [About Metro Cab Rental | Delhi Taxi Company Since 2014](http://127.0.0.1:8901/about.html): Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.\n- [Contact Metro Cab Rental Delhi | Book a Taxi 24x7](http://127.0.0.1:8901/contact.html): Contact Metro Cab Rental in Noida for outstation cabs, airport transfers and local taxi hire across Delhi NCR. Call 011 4000 1234 or send us a booking request.\n- [Cab Packages](http://127.0.0.1:8901/packages.html): Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.\n- [Cab Packages](http://127.0.0.1:8901/packages-duplicate.html): Local cab rental packages of 4 hours, 8 hours and 12 hours in Delhi NCR with fixed kilometre limits and transparent extra charges beyond the package.\n- [Airport Transfer Service in Delhi | Metro Cab Rental](http://127.0.0.1:8901/airport.html): Book a fixed price airport transfer service in Delhi with Metro Cab Rental. Flight tracking, meet and greet, 24x7 pickups from Terminal 1, 2 and 3 with no surge pricing.\n- [About Metro Cab Rental | Delhi Taxi Company Since 2014](http://127.0.0.1:8901/hidden-orphan.html): Metro Cab Rental has served Delhi NCR since 2014 with a fleet of sanitised sedans and SUVs, verified chauffeurs and transparent per kilometre pricing for every trip.\n\n## Contact\n\n- Phone: +911140001234\n",
+    "local_business_schema": {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Metro Cab Rental",
+      "url": "http://127.0.0.1:8901",
+      "telephone": "011 4000 1234",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Noida",
+        "streetAddress": "YOUR STREET ADDRESS",
+        "postalCode": "YOUR PIN/ZIP",
+        "addressCountry": "IN"
+      },
+      "areaServed": "Noida",
+      "description": "Reliable Cab Rental in Delhi for Outstation, Airport and Local Trips Every Day Metro Cab Rental provides taxi hire across Delhi NCR. We have been driving customers since 2014 with clean cars and profe",
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Our Fleet"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Outstation Cab Booking"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Cab Packages"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Airport Transfer Service in Delhi"
+          }
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/YOURPAGE",
+        "https://www.instagram.com/YOURPAGE"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    "faq_schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why choose us",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Transparent per kilometre pricing Verified drivers 24x7 support What areas do you cover? We cover the whole of Delhi NCR including Noida, Gurgaon, Faridabad and Ghaziabad, plus outstation routes to Jaipur, Agra, Chandigarh and Dehradun with fixed one way fare"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We cover the whole of Delhi NCR including Noida, Gurgaon, Faridabad and Ghaziabad, plus outstation routes to Jaipur, Agra, Chandigarh and Dehradun with fixed one way fares. How do I pay for my ride? You can pay by UPI, credit card, net banking or cash directl"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pay for my ride?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can pay by UPI, credit card, net banking or cash directly to the driver at the end of the trip. A GST invoice is emailed to you automatically. Call us on 011 4000 1234 for a quote today."
+          }
+        }
+      ]
+    }
+  },
+  "data_sources": {
+    "page_speed": "headless-chrome-lab",
+    "authority": "on-site-estimate",
+    "keywords": "derived-from-content",
+    "competitors": "not run",
+    "llm_assist": false
+  },
+  "summary": {
+    "verdict": "Overall SEO score 44.8/100 (grade F) with 4 critical and 33 high-priority issues across 8 crawled pages.",
+    "strengths": [
+      "Page Speed at 100.0/100"
+    ],
+    "weaknesses": [
+      "Authority at 40.1/100",
+      "Ai Score at 33.5/100",
+      "Error Score at 22.0/100"
+    ],
+    "opportunities": [
+      "Site is not served over HTTPS",
+      "Page is set to noindex",
+      "Page returns a 4xx error"
+    ],
+    "first_30_days": [
+      "Install a TLS certificate and 301-redirect all HTTP URLs to HTTPS.",
+      "Remove the noindex directive from the meta robots tag or X-Robots-Tag header.",
+      "Restore the page or 301-redirect it to the closest relevant live URL.",
+      "Restore the page or 301-redirect it to the closest relevant live URL."
+    ]
+  }
+}

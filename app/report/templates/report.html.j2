@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Audit — {{ r.site.domain }}</title>
+<style>
+  :root{
+    --ink:#0B1F33; --ink-2:#16324F; --slate:#5A6B80; --line:#DCE4ED;
+    --paper:#FFFFFF; --panel:#F4F7FA; --instrument:#08182A;
+    --pass:#0E9F6E; --warn:#D98200; --high:#E4572E; --crit:#C3222B; --cyan:#00A6A6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--panel);color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .sheet{max-width:1080px;margin:0 auto;background:var(--paper);}
+  section{padding:34px 46px;border-bottom:1px solid var(--line);}
+  h1,h2,h3{margin:0 0 10px;line-height:1.25;letter-spacing:-.01em}
+  h1{font-size:34px;font-weight:700}
+  h2{font-size:21px;font-weight:700;text-transform:none}
+  h3{font-size:16px;font-weight:700}
+  p{margin:0 0 12px}
+  .eyebrow{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+  .muted{color:var(--slate)}
+  .small{font-size:13px}
+  a{color:var(--ink-2);word-break:break-word}
+
+  /* cover */
+  .cover{background:var(--instrument);color:#EAF2F8;padding:44px 46px 38px}
+  .cover h1{color:#fff}
+  .cover .eyebrow{color:var(--cyan)}
+  .cover a{color:#8FD3D3}
+  .instrument{display:flex;gap:26px;align-items:center;margin:26px 0 6px;flex-wrap:wrap}
+  .dial{width:148px;height:148px;border-radius:50%;display:grid;place-items:center;
+    background:conic-gradient(var(--dial-color) calc(var(--pct)*1%), rgba(255,255,255,.09) 0);
+    position:relative;flex:none}
+  .dial::after{content:"";position:absolute;inset:11px;border-radius:50%;background:var(--instrument)}
+  .dial b{position:relative;z-index:1;font:700 40px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff}
+  .dial span{position:relative;z-index:1;display:block;text-align:center;font-size:11px;
+    letter-spacing:.14em;color:#9FB3C8;margin-top:6px;text-transform:uppercase}
+  .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:26px}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+    border-radius:10px;padding:14px}
+  .stat .v{font:700 26px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff}
+  .stat .k{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#9FB3C8;margin-top:7px}
+  .bar{height:4px;border-radius:3px;background:rgba(255,255,255,.14);margin-top:9px;overflow:hidden}
+  .bar i{display:block;height:100%;border-radius:3px}
+
+  /* generic */
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin:8px 0 4px}
+  th{text-align:left;background:var(--panel);color:var(--ink-2);font-size:11px;letter-spacing:.09em;
+    text-transform:uppercase;padding:9px 10px;border-bottom:2px solid var(--line)}
+  td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#FAFCFE}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font:600 11px/1.7 ui-monospace,monospace;
+    letter-spacing:.04em;text-transform:uppercase;color:#fff}
+  .critical{background:var(--crit)} .high{background:var(--high)}
+  .medium{background:var(--warn)} .low{background:#6B7A8D}
+  .ok{color:var(--pass);font-weight:600} .bad{color:var(--crit);font-weight:600}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--paper)}
+  .card h3{margin-bottom:6px}
+  ul{margin:0 0 12px;padding-left:18px} li{margin:4px 0}
+  pre{background:var(--instrument);color:#D7E6F2;padding:14px;border-radius:9px;overflow:auto;
+    font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
+  code{font:12.5px ui-monospace,SFMono-Regular,Menlo,monospace;background:#EEF3F8;padding:1px 5px;border-radius:4px}
+  .issue{border:1px solid var(--line);border-left:5px solid var(--line);border-radius:9px;
+    padding:15px 17px;margin:12px 0;background:var(--paper);break-inside:avoid}
+  .issue.critical{border-left-color:var(--crit)} .issue.high{border-left-color:var(--high)}
+  .issue.medium{border-left-color:var(--warn)} .issue.low{border-left-color:#6B7A8D}
+  .issue h3{display:flex;gap:10px;align-items:center;justify-content:space-between}
+  .kv{display:grid;grid-template-columns:132px 1fr;gap:5px 14px;font-size:13.5px;margin-top:9px}
+  .kv dt{color:var(--slate);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+  .kv dd{margin:0}
+  .evidence{background:var(--panel);border:1px dashed var(--line);border-radius:7px;padding:9px 11px;
+    font:12.5px ui-monospace,monospace;color:var(--ink-2);margin-top:9px;word-break:break-word}
+  figure{margin:12px 0 0}
+  figure img{width:100%;border:1px solid var(--line);border-radius:8px;display:block}
+  figcaption{font-size:11.5px;color:var(--slate);margin-top:6px}
+  .meter{height:9px;background:var(--panel);border-radius:6px;overflow:hidden;margin-top:6px}
+  .meter i{display:block;height:100%}
+  .scorelist{display:grid;gap:12px}
+  .scorerow{display:grid;grid-template-columns:170px 1fr 56px;gap:12px;align-items:center;font-size:13.5px}
+  footer{padding:26px 46px;color:var(--slate);font-size:12.5px}
+  @media print{
+    body{background:#fff} .sheet{max-width:none}
+    section{padding:22px 26px;break-inside:auto}
+    .issue,figure,table{break-inside:avoid}
+    .cover{padding:30px 26px}
+  }
+  @media (max-width:760px){
+    .stats{grid-template-columns:repeat(2,1fr)} .grid2,.grid3{grid-template-columns:1fr}
+    section{padding:24px 20px} .scorerow{grid-template-columns:110px 1fr 44px}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<div class="cover">
+  <div class="eyebrow">SEO Audit Report · {{ r.generated_at[:10] }}</div>
+  <h1>{{ r.site.brand or r.site.domain }}</h1>
+  <p class="muted" style="color:#9FB3C8">
+    <a href="{{ r.site.url }}">{{ r.site.url }}</a>
+    · {{ r.crawl.pages_crawled }} pages crawled
+    {%- if r.site.location %} · {{ r.site.location }}{% endif %}
+    · completed in {{ r.duration_sec }}s
+  </p>
+
+  <div class="instrument">
+    <div class="dial" style="--pct:{{ r.scores.overall_score }};--dial-color:{{ color(r.scores.overall_score) }}">
+      <div><b>{{ r.scores.overall_score|round|int }}</b><span>Grade {{ r.scores.grade }}</span></div>
+    </div>
+    <div style="flex:1;min-width:260px">
+      <p style="color:#D7E6F2;margin:0">{{ r.summary.verdict }}</p>
+      <p class="small" style="color:#7E97B0;margin-top:10px">
+        Weighted from technical 25% · on-page 20% · content 20% · authority 15% · AI search 10% · speed 10%.
+      </p>
+    </div>
+  </div>
+
+  <div class="stats">
+    {% for key, label in [("authority","Authority"),("ai_score","AI Score"),("error_score","Error Score"),("page_speed","Page Speed"),("google_optimized","Google Optimized")] %}
+    <div class="stat">
+      <div class="v">{{ r.scores.headline[key]|round|int }}</div>
+      <div class="k">{{ label }}</div>
+      <div class="bar"><i style="width:{{ r.scores.headline[key] }}%;background:{{ color(r.scores.headline[key]) }}"></i></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<section>
+  <div class="eyebrow">01 · Executive summary</div>
+  <h2>What we found</h2>
+  <div class="grid3">
+    <div class="card"><h3>Strengths</h3><ul>{% for s in r.summary.strengths %}<li>{{ s }}</li>{% endfor %}</ul></div>
+    <div class="card"><h3>Weaknesses</h3><ul>{% for s in r.summary.weaknesses %}<li>{{ s }}</li>{% endfor %}</ul></div>
+    <div class="card"><h3>Opportunities</h3><ul>{% for s in r.summary.opportunities %}<li>{{ s }}</li>{% endfor %}</ul></div>
+  </div>
+  {% if r.summary.first_30_days %}
+  <h3 style="margin-top:20px">Do this first (next 30 days)</h3>
+  <ol>{% for s in r.summary.first_30_days %}<li>{{ s }}</li>{% endfor %}</ol>
+  {% endif %}
+  <table>
+    <tr><th>Issues</th><th>Critical</th><th>High</th><th>Medium</th><th>Low</th><th>Total</th></tr>
+    <tr>
+      <td class="muted">count</td>
+      <td><span class="pill critical">{{ r.scores.issue_counts.critical }}</span></td>
+      <td><span class="pill high">{{ r.scores.issue_counts.high }}</span></td>
+      <td><span class="pill medium">{{ r.scores.issue_counts.medium }}</span></td>
+      <td><span class="pill low">{{ r.scores.issue_counts.low }}</span></td>
+      <td><b>{{ r.scores.issue_counts.total }}</b></td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <div class="eyebrow">02 · Score breakdown</div>
+  <h2>Where the score comes from</h2>
+  <div class="grid2">
+    <div>
+      <div class="scorelist">
+        {% for name, value in r.scores.sections.items() %}
+        <div class="scorerow">
+          <span>{{ name.replace('_',' ')|title }}</span>
+          <span class="meter"><i style="width:{{ value }}%;background:{{ color(value) }}"></i></span>
+          <b style="font-family:ui-monospace,monospace">{{ value|round|int }}</b>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="small muted" style="margin-top:14px">
+        Error score starts at 100 and subtracts weighted penalties per issue
+        (critical 12, high 6, medium 2.5, low 0.8), with repeats discounted so one
+        sitewide mistake cannot zero the score.
+      </p>
+    </div>
+    <div>
+      <h3>Google-optimised checklist</h3>
+      <table>
+        <tr><th>Check</th><th>Score</th><th>Detail</th></tr>
+        {% for c in r.scores.google_optimized_checklist %}
+        <tr><td>{{ c.check }}</td>
+          <td style="font-family:ui-monospace,monospace">{{ c.earned }}/{{ c.max }}</td>
+          <td class="muted small">{{ c.note }}</td></tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">03 · Priority fix roadmap</div>
+  <h2>Every issue, in the order it should be fixed</h2>
+  {% for sev in ["critical","high","medium","low"] %}
+    {% set items = r.roadmap[sev] %}
+    {% if items %}
+      <h3 style="margin-top:22px">{{ sev|title }} — {{ items|length }} issue{{ '' if items|length == 1 else 's' }}</h3>
+      {% for i in items[:limits[sev]] %}
+      <div class="issue {{ sev }}">
+        <h3><span>{{ i.problem }}</span><span class="pill {{ sev }}">{{ sev }}</span></h3>
+        {% if i.url %}<div class="small muted"><a href="{{ i.url }}">{{ i.url }}</a></div>{% endif %}
+        <dl class="kv">
+          <dt>What we found</dt><dd>{{ i.detail }}</dd>
+          <dt>Why it matters</dt><dd>{{ i.why_it_matters }}</dd>
+          <dt>Recommended fix</dt><dd>{{ i.recommended_fix }}</dd>
+          <dt>Expected benefit</dt><dd>{{ i.expected_benefit }}</dd>
+        </dl>
+        {% if i.evidence %}<div class="evidence">{{ i.evidence[:400] }}</div>{% endif %}
+        {% if i.screenshot_data %}
+        <figure><img src="{{ i.screenshot_data }}" alt="Screenshot evidence for {{ i.problem }}">
+          <figcaption>Screenshot captured from {{ i.url }} — the highlighted element is the issue.</figcaption>
+        </figure>
+        {% endif %}
+      </div>
+      {% endfor %}
+      {% if items|length > limits[sev] %}
+      <p class="small muted">+ {{ items|length - limits[sev] }} more {{ sev }} instances in the JSON export.</p>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</section>
+
+<section>
+  <div class="eyebrow">04 · Keywords &amp; service relevance</div>
+  <h2>Does the site use the keywords its services need?</h2>
+  <p class="small muted">Keyword source: {{ r.keywords.source }}. Average placement score
+    {{ r.keywords.coverage_score }}/100 across crawled pages.</p>
+  <div class="grid2">
+    <div class="card"><h3>Services detected on the site</h3>
+      <ul>{% for s in r.keywords.detected_services[:10] %}<li>{{ s }}</li>{% else %}<li class="muted">none detected</li>{% endfor %}</ul>
+    </div>
+    <div class="card"><h3>Target keywords</h3>
+      <ul>{% for k in r.keywords.primary_keywords[:10] %}<li>{{ k }}</li>{% else %}<li class="muted">none derived</li>{% endfor %}</ul>
+    </div>
+  </div>
+  <table>
+    <tr><th>Page</th><th>Primary keyword</th><th>Title</th><th>H1</th><th>H2/H3</th><th>URL</th><th>Body</th><th>Alt</th><th>Score</th></tr>
+    {% for p in r.keywords.pages %}
+    <tr>
+      <td class="small"><a href="{{ p.url }}">{{ p.url|truncate(52, true) }}</a></td>
+      <td class="small">{{ p.primary_keyword or '—' }}</td>
+      {% for f in ["title","h1","h2_h3","url_slug","body","image_alt"] %}
+      <td>{% if p.placement.get(f) %}<span class="ok">yes</span>{% else %}<span class="bad">no</span>{% endif %}</td>
+      {% endfor %}
+      <td style="font-family:ui-monospace,monospace">{{ p.score|round|int }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</section>
+
+<section>
+  <div class="eyebrow">05 · AI search visibility (GEO)</div>
+  <h2>Readiness for ChatGPT, Claude, Perplexity and AI Overviews</h2>
+  <div class="grid2">
+    <div>
+      <table>
+        <tr><th>Signal</th><th>Score</th><th>Detail</th></tr>
+        {% for name, c in r.ai_visibility.components.items() %}
+        <tr><td>{{ name.replace('_',' ')|title }}</td>
+          <td style="font-family:ui-monospace,monospace">{{ c.earned }}/{{ c.max }}</td>
+          <td class="muted small">{{ c.note }}</td></tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="card">
+      <h3>Machine-readability at a glance</h3>
+      <ul>
+        <li>llms.txt: {% if r.ai_visibility.llms_txt_present %}<span class="ok">published</span>{% else %}<span class="bad">missing</span>{% endif %}</li>
+        <li>AI crawlers blocked: {{ r.ai_visibility.ai_crawlers_blocked|join(', ') or 'none' }}</li>
+        <li>Extractable answer blocks: {{ r.ai_visibility.extractable_answer_blocks }}</li>
+        <li>Question-led headings: {{ r.ai_visibility.question_headings }}</li>
+        <li>Entity signals: {{ r.ai_visibility.entity_signals|join(', ') or 'none found' }}</li>
+      </ul>
+      {% if r.ai_visibility.brand_citation_check %}
+      <p class="small"><b>Live AI check:</b> {{ r.ai_visibility.brand_citation_check.visibility_note }}</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">06 · Technical &amp; crawl</div>
+  <h2>Infrastructure and crawled pages</h2>
+  <div class="grid3">
+    <div class="card"><h3>Site files</h3><ul>
+      <li>HTTPS: {{ 'yes' if r.site.https else 'no' }}</li>
+      <li>robots.txt: {{ 'found' if r.site.robots_txt else 'missing' }}</li>
+      <li>XML sitemap: {{ 'found' if r.site.sitemap_found else 'missing' }} ({{ r.site.sitemap_url_count }} URLs)</li>
+      <li>llms.txt: {{ 'found' if r.site.llms_txt else 'missing' }}</li>
+    </ul></div>
+    <div class="card"><h3>Links</h3><ul>
+      <li>Internal links found: {{ r.links.internal_links_found }}</li>
+      <li>External links found: {{ r.links.external_links_found }}</li>
+      <li>URLs checked: {{ r.links.links_checked }}</li>
+      <li>Broken internal: <b class="{{ 'bad' if r.links.broken_internal else 'ok' }}">{{ r.links.broken_internal }}</b></li>
+      <li>Broken external: {{ r.links.broken_external }}</li>
+    </ul></div>
+    <div class="card"><h3>Content</h3><ul>
+      <li>Average words/page: {{ r.content.avg_word_count }}</li>
+      <li>Thin pages (&lt;300 words): {{ r.content.thin_pages }}</li>
+      <li>Near-duplicate pairs: {{ r.content.duplicate_pairs|length }}</li>
+      <li>Readability: {{ r.content.avg_readability }} Flesch</li>
+      <li>Pages with schema: {{ r.schema.pages_with_schema }}/{{ r.crawl.pages_crawled }}</li>
+    </ul></div>
+  </div>
+  <table>
+    <tr><th>URL</th><th>Status</th><th>Title (len)</th><th>Meta (len)</th><th>H1</th><th>Words</th><th>Imgs no alt</th><th>Schema</th></tr>
+    {% for p in r.crawl.pages %}
+    <tr>
+      <td class="small"><a href="{{ p.url }}">{{ p.url|truncate(56, true) }}</a></td>
+      <td class="{{ 'ok' if p.status == 200 else 'bad' }}">{{ p.status }}</td>
+      <td class="small">{{ p.title_length }}{% if p.title_length > 60 %} <span class="bad">!</span>{% endif %}</td>
+      <td class="small">{{ p.meta_description_length }}{% if p.meta_description_length > 160 or p.meta_description_length == 0 %} <span class="bad">!</span>{% endif %}</td>
+      <td class="small">{{ p.h1|length }}{% if p.h1|length != 1 %} <span class="bad">!</span>{% endif %}</td>
+      <td class="small">{{ p.word_count }}</td>
+      <td class="small {{ 'bad' if p.images_missing_alt else '' }}">{{ p.images_missing_alt }}/{{ p.images }}</td>
+      <td class="small muted">{{ p.schema_types[:2]|join(', ') or '—' }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% if r.links.broken_urls %}
+  <h3 style="margin-top:18px">Broken links</h3>
+  <table><tr><th>URL</th><th>Status</th></tr>
+    {% for b in r.links.broken_urls[:20] %}
+    <tr><td class="small">{{ b.url|truncate(90, true) }}</td><td class="bad">{{ b.status or 'no response' }}</td></tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+</section>
+
+<section>
+  <div class="eyebrow">07 · Speed &amp; authority</div>
+  <h2>Performance and off-site strength</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Page speed — {{ r.page_speed.page_speed_score|round|int }}/100</h3>
+      <p class="small muted">Source: {{ r.page_speed.source }} · tested {{ r.page_speed.tested_url }}</p>
+      <table>
+        {% for k, v in r.page_speed.metrics.items() %}
+        <tr><td>{{ k|upper }}</td><td style="font-family:ui-monospace,monospace">{{ v }}{{ 's' if k not in ['cls','field_cls','tbt'] else '' }}</td></tr>
+        {% endfor %}
+      </table>
+      {% if r.page_speed.top_opportunities %}
+      <h3 style="margin-top:12px">Biggest wins</h3>
+      <ul>{% for o in r.page_speed.top_opportunities %}<li>{{ o.title }} — saves ~{{ o.savings_ms }}ms</li>{% endfor %}</ul>
+      {% endif %}
+    </div>
+    <div class="card">
+      <h3>Authority — {{ r.authority.authority_score|round|int }}/100</h3>
+      <p class="small muted">Source: {{ r.authority.source }}{% if r.authority.is_estimate %} (estimate){% endif %}</p>
+      <ul>
+        {% if r.authority.referring_domains is not none %}<li>Referring domains: {{ r.authority.referring_domains }}</li>{% endif %}
+        {% if r.authority.backlinks is not none %}<li>Backlinks: {{ r.authority.backlinks }}</li>{% endif %}
+        {% if r.authority.domain_rating is not none %}<li>Domain rating: {{ r.authority.domain_rating }}</li>{% endif %}
+        {% for n in r.authority.notes %}<li class="muted small">{{ n }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% if r.competitors.competitors %}
+<section>
+  <div class="eyebrow">08 · Competitor analysis</div>
+  <h2>How the site compares{% if r.competitors.query_used %} for “{{ r.competitors.query_used }}”{% endif %}</h2>
+  <table>
+    <tr><th>Competitor</th><th>Words</th><th>Title len</th><th>Schema</th><th>FAQ schema</th><th>llms.txt</th><th>Alt %</th><th>Load</th></tr>
+    {% for c in r.competitors.competitors %}
+    <tr>
+      <td class="small"><a href="{{ c.url }}">{{ c.domain }}</a>{% if c.error %} <span class="bad small">({{ c.error }})</span>{% endif %}</td>
+      <td>{{ c.word_count }}</td><td>{{ c.title_length }}</td>
+      <td class="small muted">{{ c.schema_types[:2]|join(', ') or '—' }}</td>
+      <td>{{ 'yes' if c.has_faq_schema else 'no' }}</td>
+      <td>{{ 'yes' if c.has_llms_txt else 'no' }}</td>
+      <td>{{ c.images_with_alt_pct }}</td>
+      <td>{{ c.load_ms }}ms</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Gaps to close</h3>
+      <ul>{% for g in r.competitors.comparison.gaps %}<li>{{ g }}</li>{% else %}<li class="muted">No material gaps found.</li>{% endfor %}</ul></div>
+    <div class="card"><h3>Where you already lead</h3>
+      <ul>{% for w in r.competitors.comparison.wins %}<li>{{ w }}</li>{% else %}<li class="muted">No clear advantages yet.</li>{% endfor %}</ul></div>
+  </div>
+</section>
+{% endif %}
+
+<section>
+  <div class="eyebrow">09 · Ready-to-paste fixes</div>
+  <h2>Copy these straight into the site</h2>
+  {% if r.recommended_fixes %}
+  <table>
+    <tr><th>Page</th><th>Current</th><th>Suggested</th></tr>
+    {% for f in r.recommended_fixes %}
+    <tr>
+      <td class="small"><a href="{{ f.url }}">{{ f.url|truncate(46, true) }}</a><br>
+        <span class="muted small">target: {{ f.primary_keyword or '—' }}</span></td>
+      <td class="small">
+        <b>Title</b> ({{ f.current_title|length }}): {{ f.current_title or '—' }}<br>
+        <b>Meta</b> ({{ f.current_meta_description|length }}): {{ f.current_meta_description or '—' }}<br>
+        <b>H1</b>: {{ f.current_h1 or '—' }}
+      </td>
+      <td class="small">
+        <b>Title</b> ({{ f.suggested_title|length }}): {{ f.suggested_title }}<br>
+        <b>Meta</b> ({{ f.suggested_meta_description|length }}): {{ f.suggested_meta_description }}<br>
+        <b>H1</b>: {{ f.suggested_h1 }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+  <h3 style="margin-top:20px">llms.txt — publish at {{ r.site.url }}/llms.txt</h3>
+  <pre>{{ r.generated_assets.llms_txt }}</pre>
+  <h3>LocalBusiness schema — paste in the site &lt;head&gt;</h3>
+  <pre>&lt;script type="application/ld+json"&gt;
+{{ r.generated_assets.local_business_schema | tojson(indent=2) }}
+&lt;/script&gt;</pre>
+  <h3>FAQPage schema</h3>
+  <pre>&lt;script type="application/ld+json"&gt;
+{{ r.generated_assets.faq_schema | tojson(indent=2) }}
+&lt;/script&gt;</pre>
+</section>
+
+<footer>
+  <b>Method &amp; limits.</b> {{ r.crawl.pages_crawled }} pages crawled from {{ r.site.url }} on
+  {{ r.generated_at[:10] }}. Page speed source: {{ r.data_sources.page_speed }}. Authority source:
+  {{ r.data_sources.authority }}. Keyword source: {{ r.data_sources.keywords }}.
+  Figures labelled “estimate” are derived from on-site signals, not third-party link or field data —
+  connect an API key for measured numbers. Audit ID <code>{{ r.audit_id }}</code>.
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Audit Agent</title>
+<style>
+  :root{--bg:#08182A;--panel:#0F2438;--line:#1E3A55;--text:#E7F0F7;--dim:#8FA9C0;
+        --cyan:#00C2C2;--pass:#12B76A;--warn:#F2A900;--crit:#E5484D;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header{padding:22px 28px;border-bottom:1px solid var(--line);display:flex;
+    align-items:baseline;gap:16px;flex-wrap:wrap}
+  h1{font-size:19px;margin:0;letter-spacing:-.01em}
+  .tag{font:600 10px/1 ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--cyan);border:1px solid var(--line);padding:5px 8px;border-radius:5px}
+  main{max-width:1180px;margin:0 auto;padding:26px 28px 60px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;
+    margin-bottom:20px}
+  h2{font-size:15px;margin:0 0 14px;letter-spacing:.02em}
+  label{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+    margin:0 0 6px}
+  input,textarea,select{width:100%;background:#0A1E33;border:1px solid var(--line);color:var(--text);
+    border-radius:8px;padding:11px 12px;font:14px inherit}
+  input:focus,textarea:focus{outline:2px solid var(--cyan);outline-offset:1px}
+  .row{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-bottom:14px}
+  .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:14px}
+  button{background:var(--cyan);color:#04121F;border:0;border-radius:8px;padding:12px 18px;
+    font:600 14px inherit;cursor:pointer}
+  button.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .checks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--dim);margin:4px 0 16px}
+  .checks label{display:flex;align-items:center;gap:7px;text-transform:none;letter-spacing:0;
+    font-size:13px;color:var(--dim);margin:0}
+  .checks input{width:auto}
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .stat{background:#0A1E33;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .stat b{display:block;font:700 24px/1 ui-monospace,monospace}
+  .stat span{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+    display:block;margin-top:7px}
+  .bar{height:4px;border-radius:3px;background:#0E2A44;margin-top:8px;overflow:hidden}
+  .bar i{display:block;height:100%}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);
+    padding:8px;border-bottom:1px solid var(--line)}
+  td{padding:9px 8px;border-bottom:1px solid #16304A}
+  a{color:var(--cyan)}
+  .pill{font:600 10px/1.8 ui-monospace,monospace;text-transform:uppercase;padding:2px 8px;
+    border-radius:999px;color:#04121F}
+  .queued{background:#3C5A75;color:#DDEAF5} .running{background:var(--warn)}
+  .completed{background:var(--pass)} .failed{background:var(--crit);color:#fff}
+  .progress{height:6px;background:#0E2A44;border-radius:4px;overflow:hidden;margin:14px 0 8px}
+  .progress i{display:block;height:100%;background:var(--cyan);transition:width .4s}
+  .muted{color:var(--dim);font-size:13px}
+  .err{color:var(--crit)}
+  @media(max-width:820px){.row,.row3{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <h1>SEO Audit Agent</h1>
+  <span class="tag" id="quota">loading…</span>
+  <span class="tag" id="providers"></span>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Run an audit</h2>
+    <div class="row">
+      <div><label for="url">Website URL</label><input id="url" placeholder="https://example.com"></div>
+      <div><label for="pages">Pages to crawl</label><input id="pages" type="number" value="10" min="1" max="200"></div>
+      <div><label for="key">API key</label><input id="key" placeholder="demo-key"></div>
+    </div>
+    <div class="row3">
+      <div><label for="kw">Target keywords (optional, comma separated)</label><input id="kw" placeholder="leave blank to auto-detect"></div>
+      <div><label for="comp">Competitors (optional)</label><input id="comp" placeholder="auto-researched if blank"></div>
+      <div><label for="ref">Client reference (optional)</label><input id="ref" placeholder="crm-1234"></div>
+    </div>
+    <div class="checks">
+      <label><input type="checkbox" id="wantComp" checked> research competitors</label>
+      <label><input type="checkbox" id="wantShots" checked> capture screenshot evidence</label>
+    </div>
+    <button id="run">Start audit</button>
+    <button class="ghost" id="bulk">Queue a list of URLs</button>
+    <div id="live"></div>
+  </div>
+
+  <div class="card">
+    <h2>Recent audits</h2>
+    <table>
+      <thead><tr><th>Site</th><th>Status</th><th>Overall</th><th>Authority</th><th>AI</th>
+        <th>Errors</th><th>Speed</th><th>Google</th><th>Report</th></tr></thead>
+      <tbody id="rows"><tr><td colspan="9" class="muted">No audits yet.</td></tr></tbody>
+    </table>
+  </div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const store = {
+  get key(){ return localStorage.getItem('seoagent_key') || 'demo-key'; },
+  set key(v){ localStorage.setItem('seoagent_key', v); }
+};
+$('key').value = store.key;
+$('key').addEventListener('change', e => { store.key = e.target.value.trim(); refresh(); });
+
+const headers = () => ({'Content-Type':'application/json','X-API-Key': $('key').value.trim()});
+const color = v => v >= 80 ? '#12B76A' : v >= 60 ? '#00C2C2' : v >= 40 ? '#F2A900' : '#E5484D';
+const num = v => v === null || v === undefined ? '—' : Math.round(v);
+
+async function api(path, opts={}) {
+  const res = await fetch(path, {headers: headers(), ...opts});
+  if (!res.ok) throw new Error((await res.json().catch(()=>({detail:res.statusText}))).detail);
+  return res.json();
+}
+
+async function refresh(){
+  try {
+    const [s, c] = await Promise.all([api('/stats'), api('/config')]);
+    $('quota').textContent = `${s.today}/${s.daily_quota} today · queue ${s.queue_depth} · ${s.workers} workers`;
+    const on = Object.entries(c.providers).filter(([,v]) => v).map(([k]) => k);
+    $('providers').textContent = on.length ? `connected: ${on.join(', ')}` : 'no external providers connected';
+    renderRows((await api('/audits?limit=25')).audits);
+  } catch (e) {
+    $('quota').textContent = 'API key required';
+  }
+}
+
+function renderRows(list){
+  const tb = $('rows');
+  if (!list.length) { tb.innerHTML = '<tr><td colspan="9" class="muted">No audits yet.</td></tr>'; return; }
+  tb.innerHTML = list.map(a => `
+    <tr>
+      <td>${a.domain || a.url}${a.client_ref ? `<br><span class="muted">${a.client_ref}</span>` : ''}</td>
+      <td><span class="pill ${a.status}">${a.status}</span>${a.status === 'running' ? ` ${a.progress}%` : ''}</td>
+      <td><b>${num(a.overall_score)}</b> ${a.grade ? `(${a.grade})` : ''}</td>
+      <td>${num(a.scores.authority)}</td><td>${num(a.scores.ai_score)}</td>
+      <td>${num(a.scores.error_score)}</td><td>${num(a.scores.page_speed)}</td>
+      <td>${num(a.scores.google_optimized)}</td>
+      <td>${a.status === 'completed'
+        ? `<a href="${a.share_url}" target="_blank">view</a> ·
+           <a href="${a.report_pdf}?api_key=${encodeURIComponent($('key').value.trim())}">pdf</a>`
+        : `<span class="muted">${a.error ? 'failed' : '—'}</span>`}</td>
+    </tr>`).join('');
+}
+
+async function poll(id){
+  const box = $('live');
+  for (;;) {
+    let a;
+    try { a = await api(`/audits/${id}`); } catch { break; }
+    if (a.status === 'completed') {
+      box.innerHTML = `
+        <div class="progress"><i style="width:100%"></i></div>
+        <div class="stats">
+          ${[['overall_score','Overall',a.overall_score],
+             ['authority','Authority',a.scores.authority],
+             ['ai_score','AI score',a.scores.ai_score],
+             ['error_score','Error score',a.scores.error_score],
+             ['page_speed','Page speed',a.scores.page_speed],
+             ['google_optimized','Google optimized',a.scores.google_optimized]]
+            .map(([,label,v]) => `<div class="stat"><b>${num(v)}</b><span>${label}</span>
+              <div class="bar"><i style="width:${v||0}%;background:${color(v||0)}"></i></div></div>`).join('')}
+        </div>
+        <p class="muted" style="margin-top:14px">
+          ${a.issues.critical} critical · ${a.issues.total} issues total · ${a.duration_sec}s ·
+          <a href="${a.share_url}" target="_blank">open report</a> ·
+          <a href="${a.report_pdf}?api_key=${encodeURIComponent($('key').value.trim())}">download PDF</a> ·
+          <a href="/audits/${id}/result?api_key=${encodeURIComponent($('key').value.trim())}" target="_blank">JSON</a>
+        </p>`;
+      break;
+    }
+    if (a.status === 'failed') {
+      box.innerHTML = `<p class="err">Audit failed: ${a.error || 'unknown error'}</p>`;
+      break;
+    }
+    box.innerHTML = `<div class="progress"><i style="width:${a.progress}%"></i></div>
+      <p class="muted">${a.stage || 'queued'} — ${a.progress}%</p>`;
+    await new Promise(r => setTimeout(r, 2500));
+  }
+  refresh();
+}
+
+$('run').addEventListener('click', async () => {
+  const url = $('url').value.trim();
+  if (!url) return $('url').focus();
+  $('run').disabled = true;
+  $('live').innerHTML = '<p class="muted">Queuing…</p>';
+  try {
+    const body = {
+      url,
+      max_pages: parseInt($('pages').value) || 10,
+      target_keywords: $('kw').value.trim() ? $('kw').value.split(',').map(s => s.trim()) : null,
+      competitors: $('comp').value.trim() ? $('comp').value.split(',').map(s => s.trim()) : null,
+      include_competitors: $('wantComp').checked,
+      include_screenshots: $('wantShots').checked,
+      client_ref: $('ref').value.trim() || null
+    };
+    const res = await api('/audits', {method: 'POST', body: JSON.stringify(body)});
+    poll(res.audit_id);
+  } catch (e) {
+    $('live').innerHTML = `<p class="err">${e.message}</p>`;
+  } finally {
+    $('run').disabled = false;
+  }
+});
+
+$('bulk').addEventListener('click', async () => {
+  const raw = prompt('Paste one URL per line (or comma separated) to queue them all:');
+  if (!raw) return;
+  const urls = raw.split(/[\s,]+/).map(s => s.trim()).filter(Boolean);
+  let queued = 0, failed = 0;
+  for (const url of urls) {
+    try {
+      await api('/audits', {method: 'POST', body: JSON.stringify({
+        url, max_pages: parseInt($('pages').value) || 10,
+        include_competitors: $('wantComp').checked,
+        include_screenshots: $('wantShots').checked})});
+      queued++;
+    } catch { failed++; }
+  }
+  $('live').innerHTML = `<p class="muted">Queued ${queued} audit(s)${failed ? `, ${failed} rejected` : ''}.</p>`;
+  refresh();
+});
+
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

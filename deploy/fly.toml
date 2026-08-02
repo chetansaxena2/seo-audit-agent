@@ -1,0 +1,32 @@
+# Fly.io config. Deploy with:  fly launch --copy-config --no-deploy  &&  fly deploy
+app = "seo-audit-agent"
+primary_region = "sin"          # change to your nearest region
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  STATELESS = "true"
+  REQUIRE_AUTH = "false"
+  DATA_DIR = "/tmp/seoagent"
+  RATE_LIMIT_PER_HOUR = "3"
+  PUBLIC_MAX_PAGES = "8"
+  MAX_PAGES = "8"
+  SCREENSHOT_MAX = "8"
+  PORT = "8000"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"    # sleeps when idle so it stays inside the free allowance
+  auto_start_machines = true
+  min_machines_running = 0
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 2
+    hard_limit = 4
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"                 # Chromium needs ~1 GB; 512 MB will crash on screenshots

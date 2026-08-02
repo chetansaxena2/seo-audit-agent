@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free SEO Audit — crawl, score and fix any website</title>
+<meta name="description" content="Paste a URL and get a full SEO audit: technical, on-page, schema, AI search visibility, speed and competitors, with a downloadable report you can open in any browser.">
+<style>
+  :root{--bg:#08182A;--panel:#0F2438;--line:#1E3A55;--text:#E7F0F7;--dim:#8FA9C0;
+        --cyan:#00C2C2;--pass:#12B76A;--warn:#F2A900;--crit:#E5484D;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:900px;margin:0 auto;padding:56px 22px 80px}
+  .eyebrow{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--cyan)}
+  h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.02em;margin:14px 0 12px}
+  .lede{color:var(--dim);max-width:620px;margin:0 0 30px}
+  form{display:flex;gap:10px;flex-wrap:wrap}
+  input[type=url]{flex:1;min-width:260px;background:#0A1E33;border:1px solid var(--line);
+    color:var(--text);border-radius:10px;padding:15px 16px;font:16px inherit}
+  input:focus{outline:2px solid var(--cyan);outline-offset:1px}
+  button{background:var(--cyan);color:#04121F;border:0;border-radius:10px;padding:15px 24px;
+    font:600 16px inherit;cursor:pointer}
+  button:disabled{opacity:.55;cursor:not-allowed}
+  .note{color:var(--dim);font-size:13px;margin-top:12px}
+  .kwrow{margin-top:14px}
+  .kwrow label{display:block;font-size:14px;color:var(--text);margin-bottom:7px}
+  .kwrow label span{display:block;color:var(--dim);font-size:12.5px;margin-top:3px}
+  .comprow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  @media(max-width:640px){.comprow{grid-template-columns:1fr}}
+  .kwrow input{width:100%;background:#0A1E33;border:1px solid var(--line);color:var(--text);
+    border-radius:10px;padding:13px 15px;font:15px inherit}
+  .status{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px;
+    margin-top:26px;display:none}
+  .status.on{display:block}
+  .progress{height:6px;background:#0E2A44;border-radius:4px;overflow:hidden;margin:14px 0 10px}
+  .progress i{display:block;height:100%;background:var(--cyan);width:0;transition:width 1.5s linear}
+  .stats{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:20px 0}
+  .stat{background:#0A1E33;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .stat b{display:block;font:700 24px/1 ui-monospace,monospace}
+  .stat span{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+    display:block;margin-top:7px}
+  .bar{height:4px;border-radius:3px;background:#0E2A44;margin-top:8px;overflow:hidden}
+  .bar i{display:block;height:100%}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .actions a{display:inline-block;padding:12px 18px;border-radius:9px;text-decoration:none;
+    font-weight:600;font-size:15px}
+  .primary{background:var(--cyan);color:#04121F}
+  .ghost{border:1px solid var(--line);color:var(--text)}
+  ul{padding-left:20px} li{margin:6px 0}
+  .issue{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:10px 0}
+  .issue.critical{border-color:var(--crit)} .issue.high{border-color:#E4572E}
+  .issue.medium{border-color:var(--warn)} .issue.low{border-color:#6B7A8D}
+  .issue b{display:block;font-size:14.5px} .issue span{color:var(--dim);font-size:13px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  .err{color:var(--crit)}
+  footer{color:var(--dim);font-size:13px;margin-top:44px;border-top:1px solid var(--line);
+    padding-top:20px}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">SEO Audit Agent</div>
+  <h1>Paste a website. Get the full audit.</h1>
+  <p class="lede">It crawls the site, checks technical SEO, titles and meta, headings, images,
+    schema, broken links, duplicate content, AI-search visibility, page speed and competitors —
+    then hands back a report you can download and open in any browser.</p>
+
+  <form id="form">
+    <input type="url" id="url" placeholder="https://yourwebsite.com" required>
+    <button id="go" type="submit">Run free audit</button>
+  </form>
+  <div class="kwrow">
+    <label>Competitor websites
+      <span>optional — up to three. I will compare your site against each of them.</span>
+    </label>
+    <div class="comprow">
+      <input type="text" id="c1" placeholder="competitor1.com">
+      <input type="text" id="c2" placeholder="competitor2.com">
+      <input type="text" id="c3" placeholder="competitor3.com">
+    </div>
+  </div>
+
+  <div class="kwrow">
+    <label for="kw">Keywords you want to rank for
+      <span>optional — separate with commas. Leave blank and I will work them out from the site.</span>
+    </label>
+    <input type="text" id="kw"
+           placeholder="e.g. taxi service noida, innova crysta rental, outstation cab delhi">
+  </div>
+  <p class="note" id="limits">Takes about 60–120 seconds. Nothing is stored on the server.</p>
+
+  <div class="status" id="status">
+    <div id="phase">Starting…</div>
+    <div class="progress"><i id="bar"></i></div>
+    <div id="body"></div>
+  </div>
+
+  <footer>
+    Open-source SEO Audit Agent. Reports are generated in memory and discarded —
+    no audit history is kept. Sites are crawled politely, honouring robots.txt.
+  </footer>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+const color = v => v >= 80 ? '#12B76A' : v >= 60 ? '#00C2C2' : v >= 40 ? '#F2A900' : '#E5484D';
+const num = v => v == null ? '—' : Math.round(v);
+const esc = s => String(s ?? '').replace(/[<>&]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;'}[c]));
+
+const PHASES = [
+  'Resolving the site and reading robots.txt…',
+  'Crawling pages…',
+  'Checking titles, meta descriptions and headings…',
+  'Auditing images, schema and broken links…',
+  'Scoring AI search visibility…',
+  'Measuring page speed…',
+  'Researching competitors…',
+  'Capturing screenshot evidence…',
+  'Building your report…'
+];
+
+fetch('/config').then(r => r.ok ? r.json() : null).then(c => {
+  if (c) $('limits').textContent =
+    `Takes about 60–120 seconds. Crawls up to ${c.max_pages_default} pages. ` +
+    `Limit ${c.rate_limit_per_hour} audits per hour. Nothing is stored on the server.`;
+}).catch(() => {});
+
+$('form').addEventListener('submit', async e => {
+  e.preventDefault();
+  const url = $('url').value.trim();
+  if (!url) return;
+  $('go').disabled = true;
+  $('status').className = 'status on';
+  $('body').innerHTML = '';
+  $('bar').style.width = '4%';
+
+  let step = 0;
+  $('phase').textContent = PHASES[0];
+  const ticker = setInterval(() => {
+    step = Math.min(step + 1, PHASES.length - 1);
+    $('phase').textContent = PHASES[step];
+    $('bar').style.width = Math.min(92, 8 + step * 11) + '%';
+  }, 11000);
+
+  try {
+    const kwRaw = $('kw').value.trim();
+    const keywords = kwRaw ? kwRaw.split(',').map(k => k.trim()).filter(Boolean) : null;
+    const rivals = ['c1', 'c2', 'c3'].map(id => $(id).value.trim()).filter(Boolean);
+    const res = await fetch('/audit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({url, target_keywords: keywords,
+                            competitors: rivals.length ? rivals : null})
+    });
+    const data = await res.json();
+    clearInterval(ticker);
+    if (!res.ok) throw new Error(data.detail || 'Audit failed');
+    $('bar').style.width = '100%';
+    $('phase').textContent = `Audit complete for ${data.site.domain}`;
+    render(data);
+  } catch (err) {
+    clearInterval(ticker);
+    $('bar').style.width = '100%';
+    $('phase').textContent = 'Could not finish';
+    $('body').innerHTML = `<p class="err">${esc(err.message)}</p>`;
+  } finally {
+    $('go').disabled = false;
+  }
+});
+
+function render(d) {
+  const h = d.scores.headline;
+  const stats = [
+    ['Overall', d.scores.overall_score], ['Authority', h.authority], ['AI score', h.ai_score],
+    ['Error score', h.error_score], ['Page speed', h.page_speed], ['Google optimized', h.google_optimized]
+  ].map(([label, v]) => `<div class="stat"><b>${num(v)}</b><span>${label}</span>
+      <div class="bar"><i style="width:${v || 0}%;background:${color(v || 0)}"></i></div></div>`).join('');
+
+  const top = (d.issues || []).slice(0, 8).map(i => `
+    <div class="issue ${i.impact}">
+      <b>${esc(i.problem)}</b>
+      <span>${esc(i.detail)}</span>
+    </div>`).join('');
+
+  const c = d.scores.issue_counts;
+  const pdfBtn = d.pdf_available
+    ? `<a class="ghost" href="${d.report_pdf_url}">Download PDF</a>` : '';
+  $('body').innerHTML = `
+    <div class="stats">${stats}</div>
+    <p>${esc(d.summary.verdict)}</p>
+    <div class="actions">
+      <a class="primary" href="${d.report_html_download_url}">Download report (HTML)</a>
+      <a class="ghost" href="${d.report_html_url}" target="_blank">Open full report</a>
+      ${pdfBtn}
+    </div>
+    <p class="note">The HTML file opens in any browser and can be emailed as-is —
+      images are inside the file. Report link stays live for ${d.expires_in_minutes} minutes,
+      then it is gone; nothing is saved on the server.</p>
+    <div class="grid">
+      <div>
+        <h3>Top issues (${c.critical} critical, ${c.high} high, ${c.total} total)</h3>
+        ${top}
+      </div>
+      <div>
+        <h3>What we detected</h3>
+        <ul>
+          <li>Services: ${esc((d.keywords.detected_services || []).slice(0, 4).join(', ') || 'none detected')}</li>
+          <li>Location: ${esc(d.keywords.location || 'not found')}</li>
+          <li>${(d.keywords.user_supplied || []).length ? 'Your keywords' : 'Keywords I worked out'}:
+              ${esc((d.keywords.primary_keywords || []).slice(0, 4).join(', ') || 'none')}</li>
+          <li>Related terms found on the site: ${esc((d.keywords.secondary_keywords || []).slice(0, 4).join(', ') || 'none')}</li>
+          <li>llms.txt: ${d.ai_visibility.llms_txt_present ? 'published' : 'missing'}</li>
+          <li>AI crawlers blocked: ${esc((d.ai_visibility.ai_crawlers_blocked || []).join(', ') || 'none')}</li>
+          <li>Speed source: ${esc(d.page_speed.source)}</li>
+        </ul>
+      </div>
+    </div>`;
+  $('body').scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Koyeb free tier reference (set these in the Koyeb UI when creating the service).
+# Build: Dockerfile   Port: 8000   Health check: /healthz   Instance: eco/free
+env:
+  STATELESS: "true"
+  REQUIRE_AUTH: "false"
+  DATA_DIR: "/tmp/seoagent"
+  RATE_LIMIT_PER_HOUR: "3"
+  PUBLIC_MAX_PAGES: "6"
+  MAX_PAGES: "6"
+  SCREENSHOTS_ENABLED: "false"   # 512 MB instances cannot run Chromium reliably
+  PDF_ENABLED: "true"            # falls back to the ReportLab PDF engine

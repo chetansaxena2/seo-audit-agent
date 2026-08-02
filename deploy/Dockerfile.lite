@@ -1,0 +1,33 @@
+# Lightweight build for small free hosts (Render free, Koyeb, 512 MB instances).
+#
+# Difference from the main Dockerfile: no Chromium. That means no screenshot
+# evidence and PDFs are rendered by ReportLab instead of a browser — everything
+# else (all checks, all scores, HTML report, JSON, API) works exactly the same.
+# Builds in ~2 minutes instead of ~7 and uses a fraction of the memory.
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    DATA_DIR=/tmp/seoagent \
+    STATELESS=true \
+    SCREENSHOTS_ENABLED=false
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+# strip the browser dependency — this image never launches one
+RUN grep -v "^playwright" requirements.txt > requirements.lite.txt \
+ && pip install -r requirements.lite.txt
+
+COPY app ./app
+
+RUN mkdir -p /tmp/seoagent/screenshots /tmp/seoagent/reports && chmod -R 777 /tmp/seoagent
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s \
+  CMD curl -fsS http://localhost:${PORT:-8000}/healthz || exit 1
+
+CMD ["sh", "-c", "uvicorn app.api:app --host 0.0.0.0 --port ${PORT:-8000}"]

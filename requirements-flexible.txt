@@ -1,0 +1,13 @@
+# Unpinned versions — used as a fallback when the pinned list has no ready-made
+# build for your Python version (common on brand-new Python releases).
+httpx
+beautifulsoup4
+lxml
+jinja2
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-multipart
+reportlab
+playwright

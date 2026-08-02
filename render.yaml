@@ -1,3 +1,11 @@
+# Render blueprint — free tier, NO credit card needed.
+# In Render: New → Blueprint → connect your GitHub repo. Render reads this file.
+#
+# This uses the full image (with the browser) so the PDF keeps its annotated
+# screenshots, tuned with LOW_MEMORY to fit Render's 512 MB free instance.
+# Preset for the 512 MB free instance: HTML reports, no browser.
+# On a bigger machine (or your own laptop) set SCREENSHOTS_ENABLED and
+# PDF_ENABLED to "true" to get annotated screenshots and PDFs back.
 services:
   - type: web
     name: seo-audit-agent
@@ -7,17 +15,19 @@ services:
     dockerContext: .
     healthCheckPath: /healthz
     envVars:
-      - key: STATELESS
+      - key: STATELESS            # free tier has no disk — store nothing
         value: "true"
-      - key: REQUIRE_AUTH
+      - key: REQUIRE_AUTH         # false = anyone with the link can use it
         value: "false"
       - key: DATA_DIR
         value: /tmp/seoagent
-      - key: LOW_MEMORY
+      - key: LOW_MEMORY           # slim Chromium so it fits in 512 MB
         value: "true"
-      - key: SCREENSHOTS_ENABLED
-        value: "true"
-      - key: SCREENSHOT_SCALE
+      - key: SCREENSHOTS_ENABLED  # needs a browser — too heavy for the 512 MB free tier
+        value: "false"
+      - key: PDF_ENABLED          # HTML reports need no browser at all, so this stays off here
+        value: "false"
+      - key: SCREENSHOT_SCALE     # 1 instead of 1.5 = much smaller images
         value: "1"
       - key: SCREENSHOT_MAX
         value: "5"
@@ -31,3 +41,5 @@ services:
         value: "1"
       - key: RATE_LIMIT_PER_HOUR
         value: "3"
+      # Optional, add in the Render dashboard (never in this file):
+      # PAGESPEED_API_KEY, SERPER_API_KEY, ANTHROPIC_API_KEY

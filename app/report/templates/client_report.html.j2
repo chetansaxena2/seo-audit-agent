@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Audit — {{ r.site.brand or r.site.domain }} | {{ c.name }}</title>
+<style>
+  :root{
+    --ink:#14202E; --soft:#5C6B7C; --line:#E1E8EF; --paper:#FFFFFF; --wash:#F6F9FC;
+    --accent:#0B6B62; --accent-soft:#E6F2F0;
+    --crit:#C3222B; --high:#DC5A28; --med:#C98A00; --low:#6B7A8D; --good:#0E9F6E;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#EDF2F7;color:var(--ink);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .sheet{max-width:940px;margin:0 auto;background:var(--paper);}
+  section{padding:38px 52px;border-bottom:1px solid var(--line);}
+  h1{font-size:30px;line-height:1.2;margin:0 0 14px;letter-spacing:-.02em}
+  h2{font-size:22px;margin:0 0 16px;letter-spacing:-.01em}
+  h3{font-size:17px;margin:0 0 8px}
+  p{margin:0 0 14px}
+  .muted{color:var(--soft)}
+  .small{font-size:14px}
+  a{color:var(--accent)}
+
+  /* toolbar - screen only */
+  .toolbar{position:sticky;top:0;z-index:50;background:var(--ink);color:#fff;
+    padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    font-size:14px}
+  .toolbar b{margin-right:auto;font-weight:600}
+  .toolbar button{background:#fff;color:var(--ink);border:0;border-radius:7px;
+    padding:9px 15px;font:600 14px inherit;cursor:pointer}
+  .toolbar button.on{background:var(--accent);color:#fff}
+  .toolbar .hint{color:#9FB3C8;font-size:13px}
+  body.editing .sheet{outline:2px dashed var(--accent);outline-offset:-2px}
+  body.editing [contenteditable="true"]:hover{background:#FFFDF0}
+  body.editing [contenteditable="true"]:focus{background:#FFFBE6;outline:2px solid var(--accent)}
+
+  /* letter */
+  .letter{display:grid;grid-template-columns:190px 1fr;gap:30px;align-items:start}
+  .letter img{width:190px;border-radius:12px;display:block;box-shadow:0 6px 20px rgba(20,32,46,.16)}
+  .sig{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+  ul.bul{margin:0;padding-left:20px}
+  ul.bul li{margin:7px 0}
+  .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);
+    font:600 12px/1 ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+    padding:7px 11px;border-radius:6px;margin-bottom:16px}
+
+  /* score strip */
+  .scores{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 6px}
+  .score{background:var(--wash);border:1px solid var(--line);border-radius:11px;padding:15px}
+  .score b{display:block;font:700 27px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+  .score span{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--soft);margin-top:8px}
+  .meter{height:5px;border-radius:4px;background:#DDE6EE;margin-top:9px;overflow:hidden}
+  .meter i{display:block;height:100%}
+  .verdict{background:var(--accent-soft);border-left:4px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:16px 20px;margin:20px 0 0}
+
+  /* issue blocks */
+  .issue{border:1px solid var(--line);border-radius:13px;margin:22px 0;overflow:hidden;
+    break-inside:avoid}
+  .issue-head{padding:17px 22px;display:flex;gap:14px;align-items:flex-start;
+    background:var(--wash);border-bottom:1px solid var(--line)}
+  #issues{counter-reset:iss}
+  .num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--ink);color:#fff;
+    display:grid;place-items:center;font:700 14px ui-monospace,monospace}
+  .num::before{counter-increment:iss;content:counter(iss)}
+  .editctl{display:none;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px;
+    padding:11px 13px;background:#FFFBEA;border:1px dashed #E0C060;border-radius:9px}
+  body.editing .editctl{display:flex}
+  .editctl button{background:var(--ink);color:#fff;border:0;border-radius:6px;padding:7px 12px;
+    font:600 13px inherit;cursor:pointer}
+  .editctl .tip{color:#8A723A;font-size:12.5px}
+  figure.shot[hidden]{display:none}
+  .issue-head h3{margin:0;flex:1}
+  .tag{flex:none;font:600 10px/1.9 ui-monospace,monospace;letter-spacing:.08em;
+    text-transform:uppercase;padding:2px 9px;border-radius:999px;color:#fff}
+  .critical{background:var(--crit)} .high{background:var(--high)}
+  .medium{background:var(--med)} .low{background:var(--low)}
+  .issue-body{padding:20px 22px}
+  .label{font:600 11px/1 ui-monospace,monospace;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--soft);margin:16px 0 6px}
+  .fixbox{background:#0E1B27;color:#E8F1F8;border-radius:9px;padding:14px 16px;margin-top:8px;
+    font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}
+  .fixbox em{display:block;color:#7FD1C6;font:600 11px/1 ui-monospace,monospace;
+    letter-spacing:.1em;text-transform:uppercase;font-style:normal;margin-bottom:8px}
+  figure{margin:16px 0 0}
+  figure img{width:100%;border:1px solid var(--line);border-radius:9px;display:block}
+  figcaption{font-size:13px;color:var(--soft);margin-top:8px}
+  .alsopages{background:var(--wash);border-radius:9px;padding:12px 15px;margin-top:14px;
+    font-size:14px;color:var(--soft)}
+  .alsopages code{font:12.5px ui-monospace,monospace;background:#fff;padding:2px 6px;
+    border-radius:4px;border:1px solid var(--line)}
+
+  /* close */
+  .close{background:var(--ink);color:#EAF2F8}
+  .close h2{color:#fff}
+  .close a{color:#7FD1C6}
+  .contact{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+  .contact div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+    border-radius:10px;padding:15px}
+  .contact span{display:block;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+    color:#9FB3C8;margin-bottom:6px}
+  .contact b{font-size:15px;font-weight:600}
+
+  .cmp-summary{display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:start;
+    background:var(--wash);border:1px solid var(--line);border-radius:12px;padding:20px;
+    margin-top:18px}
+  .tally{display:grid;gap:9px}
+  .tally .t{display:flex;align-items:baseline;gap:10px;background:#fff;border:1px solid var(--line);
+    border-radius:9px;padding:10px 13px}
+  .tally b{font:700 24px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+  .tally span{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--soft)}
+  .tally .behind b{color:var(--crit)} .tally .ahead b{color:var(--good)}
+  .tally .level b{color:var(--low)}
+  @media(max-width:720px){.cmp-summary{grid-template-columns:1fr}}
+  .cmp-wrap{overflow-x:auto;margin-top:18px}
+  table.cmp{width:100%;border-collapse:collapse;font-size:14px}
+  table.cmp th{text-align:left;background:var(--ink);color:#fff;padding:11px 12px;
+    font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+  table.cmp td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.cmp tr:nth-child(even) td{background:var(--wash)}
+  table.cmp .you-col{background:var(--accent-soft) !important;font-weight:600}
+  table.cmp th.you-col{background:var(--accent);color:#fff}
+  .why{display:block;color:var(--soft);font-size:12.5px;font-weight:400;margin-top:3px}
+  .v{display:inline-block;padding:2px 9px;border-radius:999px;color:#fff;
+     font:600 11px/1.8 ui-monospace,monospace;text-transform:uppercase}
+  .v.behind{background:var(--crit)} .v.ahead{background:var(--good)} .v.level{background:var(--low)}
+  .rival{border:1px solid var(--line);border-radius:11px;padding:16px 20px;margin:14px 0}
+  .rival h4{margin:0 0 4px;font-size:16px}
+
+  @media print{
+    body{background:#fff}
+    .toolbar,.editctl{display:none !important}
+    figure.shot[hidden]{display:none !important}
+    .sheet{max-width:none;outline:none !important}
+    section{padding:20px 24px}
+    .issue,figure{break-inside:avoid}
+    a{text-decoration:none}
+  }
+  @media (max-width:720px){
+    section{padding:24px 20px}
+    .letter{grid-template-columns:1fr}
+    .letter img{width:150px}
+    .scores{grid-template-columns:repeat(2,1fr)}
+    .contact{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar" id="toolbar">
+  <b>{{ c.name }} · Website Audit</b>
+  <span class="hint" id="hint">Click “Edit report” to change any wording before you send it.</span>
+  <button id="editBtn" onclick="toggleEdit()">Edit report</button>
+  <button id="addBtn" onclick="addIssue()" style="display:none">+ Add a problem</button>
+  <button onclick="window.print()">Save as PDF</button>
+  <button onclick="downloadClean()">Download clean file</button>
+</div>
+
+<div class="sheet" id="sheet">
+
+<section>
+  <div class="badge">Website Audit Report · {{ r.generated_at[:10] }}</div>
+  <div class="letter">
+    <div>
+      {% if photo %}<img src="{{ photo }}" alt="{{ c.name }}">{% endif %}
+      <div class="small muted" style="margin-top:12px">
+        <b style="color:var(--ink);display:block;font-size:15px">{{ c.name }}</b>
+        {{ c.title }}<br>{{ c.location }}
+      </div>
+    </div>
+    <div contenteditable="false">
+      <h1>About me</h1>
+      <ul class="bul">
+        <li><b>{{ c.name }}</b> — {{ c.title }}</li>
+        <li>{{ c.years }} years of hands-on SEO experience</li>
+        <li>{{ c.credentials|capitalize }}</li>
+        <li>Available on {{ c.phone }} · {{ c.email }}</li>
+      </ul>
+
+      <h2 style="margin-top:24px">About your website</h2>
+      <ul class="bul">
+        {% for b in r.client_view.business_bullets %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+
+      <h2 style="margin-top:24px">What I did</h2>
+      <ul class="bul">
+        <li>Checked <b>{{ r.site.url }}</b> page by page — headings, titles, images, speed,
+            technical setup and how the site appears to Google and AI tools.</li>
+        <li>Found <b>{{ counts.critical + counts.high }} serious issues</b> holding back leads,
+            plus {{ counts.medium + counts.low }} smaller ones.</li>
+        <li>Marked each problem on a screenshot and written how to fix it, below.</li>
+      </ul>
+
+      <div class="sig">
+        <p style="margin:0"><b>{{ c.name }}</b><br>
+        <span class="muted small">{{ c.title }} · {{ c.phone }} · {{ c.email }}</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Where your website stands today</h2>
+  <p class="muted small">Scores out of 100. Below 60 needs work.</p>
+  <div class="scores">
+    {% for key, label in [("google_optimized","Google Ready"),("error_score","Site Health"),
+                          ("page_speed","Speed"),("ai_score","AI Visibility"),
+                          ("authority","Authority")] %}
+    <div class="score">
+      <b style="color:{{ color(r.scores.headline[key]) }}">{{ r.scores.headline[key]|round|int }}</b>
+      <span>{{ label }}</span>
+      <div class="meter"><i style="width:{{ r.scores.headline[key] }}%;
+           background:{{ color(r.scores.headline[key]) }}"></i></div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="verdict" contenteditable="false">
+    <b>Overall {{ r.scores.overall_score|round|int }}/100.</b>
+    {{ counts.critical }} critical and {{ counts.high }} high-priority issues across
+    {{ r.crawl.pages_crawled }} pages — almost all fixable quickly.
+  </div>
+</section>
+
+<section>
+  <h2>What is stopping your leads</h2>
+  <p class="muted">One problem per point, with a picture of exactly where it happens.
+    If the same problem is on several pages, I have shown one example and listed the rest
+    below it — the fix is the same on all of them.</p>
+
+  <div id="issues">
+  {% for g in r.client_view.issue_groups %}
+  <div class="issue">
+    <div class="issue-head">
+      <div class="num"></div>
+      <h3 contenteditable="false">{{ g.headline }}</h3>
+      <span class="tag {{ g.severity }}">{{ g.severity }}</span>
+    </div>
+    <div class="issue-body">
+      <div class="label">The problem</div>
+      <p contenteditable="false">{{ g.example_detail }}
+        {% if g.pages_affected > 1 %}This is happening on <b>{{ g.pages_affected }} pages</b>.{% endif %}</p>
+
+      <div class="label">Why it matters</div>
+      <p contenteditable="false">{{ g.cost }}</p>
+
+      <div class="label">How to fix it</div>
+      <p contenteditable="false">{{ g.action }}</p>
+
+      <figure class="shot"{% if not g.screenshot_data %} hidden{% endif %}>
+        <img src="{{ g.screenshot_data or '' }}" alt="Screenshot showing {{ g.headline }}">
+        <figcaption contenteditable="false">Screenshot from
+          {% if g.example_url %}<a href="{{ g.example_url }}">{{ g.example_url }}</a>{% endif %}
+          — the marked area is the problem.</figcaption>
+      </figure>
+      <div class="editctl">
+        <button onclick="pickImage(this)">{% if g.screenshot_data %}Replace image{% else %}Add image{% endif %}</button>
+        <button onclick="removeImage(this)">Remove image</button>
+        <input type="file" accept="image/*" hidden onchange="setImage(this)">
+        <span class="tip">Only you can see these buttons. They disappear in the PDF and in the
+          clean file.</span>
+      </div>
+
+      {% if g.other_urls %}
+      <div class="alsopages">
+        Same fix also needed on {{ g.other_urls|length }} more page{{ '' if g.other_urls|length == 1 else 's' }}:
+        {% for u in g.other_urls[:8] %}<code>{{ shortpath(u) }}</code> {% endfor %}
+        {% if g.other_urls|length > 8 %}and {{ g.other_urls|length - 8 }} more{% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+
+  <template id="issueTemplate">
+    <div class="issue">
+      <div class="issue-head">
+        <div class="num"></div>
+        <h3 contenteditable="true">Write the problem here</h3>
+        <span class="tag high" contenteditable="true">high</span>
+      </div>
+      <div class="issue-body">
+        <div class="label">The problem</div>
+        <p contenteditable="true">What you found on the website.</p>
+        <div class="label">Why it matters</div>
+        <p contenteditable="true">What it is costing the business.</p>
+        <div class="label">How to fix it</div>
+        <p contenteditable="true">The fix, in plain language.</p>
+        <figure class="shot" hidden>
+          <img src="" alt="Screenshot">
+          <figcaption contenteditable="true">Screenshot showing the problem.</figcaption>
+        </figure>
+        <div class="editctl">
+          <button onclick="pickImage(this)">Add image</button>
+          <button onclick="removeImage(this)">Remove image</button>
+          <button onclick="deleteIssue(this)">Delete this problem</button>
+          <input type="file" accept="image/*" hidden onchange="setImage(this)">
+        </div>
+      </div>
+    </div>
+  </template>
+</section>
+
+{% if r.competitors.table and r.competitors.table.checked %}
+<section>
+  <h2>You versus your competitors</h2>
+  <p class="muted" contenteditable="false">I checked
+    {{ r.competitors.table.checked|join(', ') }} on the same {{ r.competitors.table.summary.total }}
+    points I checked your site on. Same ruler, no guesswork.</p>
+
+  <div class="cmp-summary" contenteditable="false">
+    <div class="tally">
+      <div class="t behind"><b>{{ r.competitors.table.summary.behind }}</b><span>Behind</span></div>
+      <div class="t level"><b>{{ r.competitors.table.summary.level }}</b><span>Level</span></div>
+      <div class="t ahead"><b>{{ r.competitors.table.summary.ahead }}</b><span>Ahead</span></div>
+    </div>
+    <div>
+      <p style="margin:0 0 10px"><b>{{ r.competitors.table.summary.verdict }}</b></p>
+      {% if r.competitors.table.summary.biggest_gaps %}
+      <p class="small muted" style="margin:0">The gaps that matter most:</p>
+      <ul class="small" style="margin:6px 0 0">
+        {% for g in r.competitors.table.summary.biggest_gaps %}
+        <li><b>{{ g.label }}</b>{% if g.gap %} — {{ g.gap }}{% endif %}. {{ g.why }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="cmp-wrap">
+  <table class="cmp">
+    <tr>
+      <th>What Google looks at</th>
+      <th class="you-col">Your site</th>
+      {% for d in r.competitors.table.checked %}<th>{{ d }}</th>{% endfor %}
+      <th>Result</th>
+    </tr>
+    {% for row in r.competitors.table.rows %}
+    <tr>
+      <td><b>{{ row.label }}</b><span class="why">{{ row.why }}</span></td>
+      <td class="you-col">{{ row.you }}</td>
+      {% for c in row.competitors %}<td>{{ c.value }}</td>{% endfor %}
+      <td><span class="v {{ row.verdict|lower }}">{{ row.verdict }}</span></td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+
+  {% if r.competitors.table.you_are_behind_on %}
+  <h3 style="margin-top:26px">Why they are ahead of you</h3>
+  <ul contenteditable="false">
+    {% for line in r.competitors.table.you_are_behind_on %}<li>{{ line }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if r.competitors.table.you_are_ahead_on %}
+  <h3>Where you already beat them</h3>
+  <ul contenteditable="false">
+    {% for line in r.competitors.table.you_are_ahead_on %}<li>{{ line }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+
+  <h3 style="margin-top:26px">What each competitor is doing to rank</h3>
+  {% for c in r.competitors.table.per_competitor %}
+  <div class="rival">
+    <h4><a href="{{ c.url }}">{{ c.domain }}</a></h4>
+    <p class="small muted">{{ c.title }}</p>
+    <p class="small" style="color:var(--accent);font-weight:600">{{ c.profile }}</p>
+    <ul contenteditable="false">
+      {% for d in c.doing_well %}<li>{{ d }}</li>{% endfor %}
+      {% if c.keyword_edge %}
+      <li>Ranks for searches your pages never mention: {{ c.keyword_edge|join(', ') }}</li>
+      {% endif %}
+    </ul>
+  </div>
+  {% endfor %}
+
+  {% if r.competitors.table.failed %}
+  <p class="small muted">Could not read:
+    {% for f in r.competitors.table.failed %}{{ f.domain }}{% if not loop.last %}, {% endif %}{% endfor %}
+    — the site blocked the check.</p>
+  {% endif %}
+</section>
+{% endif %}
+
+<section class="close">
+  <h2>What happens next</h2>
+  <p contenteditable="false">{{ c.closing }}</p>
+  <p contenteditable="false">Every issue in this report can be fixed. Once the site is clean,
+    the real growth comes from a content and AI-search strategy built around your services —
+    so that when someone asks Google or ChatGPT for what you offer, your name is the one that
+    comes up.</p>
+  <p contenteditable="false">Call me and I will walk you through the plan.</p>
+  <div class="contact">
+    <div><span>Contact</span><b>{{ c.phone }}</b></div>
+    <div><span>Email</span><b>{{ c.email }}</b></div>
+    <div><span>Location</span><b>{{ c.location }}</b></div>
+  </div>
+  <p style="margin-top:26px"><b>Thank you,</b><br>{{ c.name }}</p>
+</section>
+
+</div>
+
+<script>
+  let editing = false;
+
+  function toggleEdit() {
+    editing = !editing;
+    document.body.classList.toggle('editing', editing);
+    document.querySelectorAll('[contenteditable]').forEach(el =>
+      el.setAttribute('contenteditable', editing ? 'true' : 'false'));
+    const btn = document.getElementById('editBtn');
+    btn.textContent = editing ? 'Done editing' : 'Edit report';
+    btn.classList.toggle('on', editing);
+    document.getElementById('addBtn').style.display = editing ? '' : 'none';
+    document.getElementById('hint').textContent = editing
+      ? 'Click any text to rewrite it. Use the yellow boxes to add or replace images.'
+      : 'Click “Edit report” to change wording or images before you send it.';
+  }
+
+  // ---- images -------------------------------------------------------------
+  function pickImage(btn) {
+    btn.closest('.editctl').querySelector('input[type=file]').click();
+  }
+
+  function setImage(input) {
+    const file = input.files && input.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const body = input.closest('.issue-body');
+      const fig = body.querySelector('figure.shot');
+      fig.querySelector('img').src = reader.result;
+      fig.removeAttribute('hidden');
+      const first = input.closest('.editctl').querySelector('button');
+      if (first) first.textContent = 'Replace image';
+    };
+    reader.readAsDataURL(file);
+    input.value = '';
+  }
+
+  function removeImage(btn) {
+    const fig = btn.closest('.issue-body').querySelector('figure.shot');
+    fig.setAttribute('hidden', '');
+    fig.querySelector('img').src = '';
+    const first = btn.closest('.editctl').querySelector('button');
+    if (first) first.textContent = 'Add image';
+  }
+
+  // ---- adding your own problems ------------------------------------------
+  function addIssue() {
+    const tpl = document.getElementById('issueTemplate');
+    const node = tpl.content.cloneNode(true);
+    document.getElementById('issues').appendChild(node);
+    const added = document.getElementById('issues').lastElementChild;
+    added.scrollIntoView({behavior: 'smooth', block: 'center'});
+    added.querySelector('h3').focus();
+  }
+
+  function deleteIssue(btn) {
+    const issue = btn.closest('.issue');
+    if (confirm('Remove this problem from the report?')) issue.remove();
+  }
+
+  // ---- clean file for the client -----------------------------------------
+  function downloadClean() {
+    const copy = document.documentElement.cloneNode(true);
+    copy.querySelectorAll('.toolbar, .editctl, template, script').forEach(el => el.remove());
+    copy.querySelectorAll('figure.shot[hidden]').forEach(el => el.remove());
+    copy.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    copy.querySelector('body').classList.remove('editing');
+    const html = '<!DOCTYPE html>' + copy.outerHTML;
+    const blob = new Blob([html], {type: 'text/html'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = '{{ (r.site.domain or "website")|replace(".", "-") }}-seo-audit.html';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(a.href);
+  }
+</script>
+</body>
+</html>
